@@ -8,6 +8,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    color: #333;
     /* UPDATED: Replaced linear gradient with a tiled background image */
     background-image: url('assets/images/background.jpg');
     background-repeat: repeat; /* Ensure the image tiles */
@@ -140,15 +141,17 @@ nav {
 .content {
     display: flex;
     min-height: 600px;
+    flex-direction: row; /* Ensure sidebar and main content are side by side */
 }
 
 /* Sidebar Styles */
 .sidebar {
-    width: 280px;
+    width: 280px; /* Re-enabled fixed width for the sidebar */
     background: linear-gradient(180deg, #f8f9fa, #e9ecef);
     border-right: 1px solid #dee2e6;
     padding: 2rem 0;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
 }
 
 .sidebar-tab {
@@ -201,7 +204,7 @@ nav {
 
 /* Main Content Styles */
 .main-content {
-    flex: 1;
+    flex: 1; /* Allow main content to grow and take available space */
     padding: 2.5rem;
     /* UPDATED: Changed background to light blue */
     background: #e0f2f7; /* A light blue color */
