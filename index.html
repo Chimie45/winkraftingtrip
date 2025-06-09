@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WinK - 2025 Summer Rafting Trip</title>
+    
+    <!-- Modern Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+    <!-- Particle Background (optional) -->
+    <div class="particles" id="particles"></div>
+    
     <div class="container">
-        <!-- Header -->
+        <!-- Modern Header -->
         <header>
             <div class="header-content">
                 <div class="logo-section">
@@ -20,11 +30,11 @@
                     <ul>
                         <li><a href="#" data-nav="tripInfo">Trip Info</a></li>
                         <li><a href="#" data-nav="aboutWink" onclick="showAboutWink()">About WinK</a></li>
-                        <li><a href="#" data-nav="register" onclick="openRegistrationForm()">Register For Trip</a></li>
-                        <li class="language-switcher">
+                        <li><a href="#" data-nav="register" onclick="openRegistrationForm()">Register</a></li>
+                        <li>
                             <select id="langSwitcher">
-                                <option value="en">English</option>
-                                <option value="ko">한국어</option>
+                                <option value="en">🌐 English</option>
+                                <option value="ko">🇰🇷 한국어</option>
                             </select>
                         </li>
                     </ul>
@@ -34,22 +44,37 @@
 
         <!-- Main Content -->
         <main>
-            <!-- Tab Navigation -->
+            <!-- Modern Tab Navigation -->
             <aside class="tab-navigation">
-                <button class="tab-button active" data-tab="introduction">Introduction</button>
-                <button class="tab-button" data-tab="rafting">Rafting</button>
-                <button class="tab-button" data-tab="paintball">Paintball</button>
-                <button class="tab-button" data-tab="atv">ATV / Fourwheeling</button>
-                <button class="tab-button" data-tab="bungee">Bungee Jumping</button>
-                <button class="tab-button" data-tab="food">Food and Lodging</button>
-                <button class="tab-button" data-tab="transportation">Transportation</button>
-                <button class="tab-button" data-tab="faq">FAQ</button>
+                <button class="tab-button active" data-tab="introduction">
+                    <span>Introduction</span>
+                </button>
+                <button class="tab-button" data-tab="rafting">
+                    <span>Rafting</span>
+                </button>
+                <button class="tab-button" data-tab="paintball">
+                    <span>Paintball</span>
+                </button>
+                <button class="tab-button" data-tab="atv">
+                    <span>ATV / Fourwheeling</span>
+                </button>
+                <button class="tab-button" data-tab="bungee">
+                    <span>Bungee Jumping</span>
+                </button>
+                <button class="tab-button" data-tab="food">
+                    <span>Food & Lodging</span>
+                </button>
+                <button class="tab-button" data-tab="transportation">
+                    <span>Transportation</span>
+                </button>
+                <button class="tab-button" data-tab="faq">
+                    <span>FAQ</span>
+                </button>
             </aside>
 
-            <!-- Content Section -->
+            <!-- Content Section with Glassmorphism -->
             <section class="content-section">
                 <div id="content-area">
-                    <!-- Content will be dynamically loaded by JavaScript -->
                     <h2>Welcome to WinK's 2025 Summer Adventure!</h2>
                     <img src="/assets/images/intro.png" alt="Introduction" class="content-image">
                     <p>Join When in Korea (WinK) for an unforgettable summer rafting trip packed with thrilling activities and amazing memories. Experience the best of Korean outdoor adventures with fellow adventurers!</p>
@@ -60,5 +85,39 @@
 
     <!-- JavaScript -->
     <script src="assets/js/scripts.js"></script>
+    
+    <!-- Optional: Particle Animation Script -->
+    <script>
+        // Simple particle effect
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'absolute';
+            particle.style.width = '2px';
+            particle.style.height = '2px';
+            particle.style.background = 'rgba(0, 212, 255, 0.5)';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            particle.style.boxShadow = '0 0 6px rgba(0, 212, 255, 0.5)';
+            
+            document.getElementById('particles').appendChild(particle);
+            
+            const duration = Math.random() * 3000 + 2000;
+            const horizontalMovement = (Math.random() - 0.5) * 100;
+            
+            particle.animate([
+                { transform: 'translate(0, 0) scale(0)', opacity: 0 },
+                { transform: `translate(${horizontalMovement}px, -${window.innerHeight + 100}px) scale(1)`, opacity: 1 },
+                { transform: `translate(${horizontalMovement * 2}px, -${window.innerHeight + 200}px) scale(0)`, opacity: 0 }
+            ], {
+                duration: duration,
+                easing: 'ease-out'
+            }).onfinish = () => particle.remove();
+        }
+        
+        // Create particles periodically
+        setInterval(createParticle, 300);
+    </script>
 </body>
 </html>
