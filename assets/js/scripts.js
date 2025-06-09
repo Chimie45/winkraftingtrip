@@ -271,6 +271,270 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Scroll to top functionality
+function createScrollToTopButton() {
+    const scrollBtn = document.createElement('button');
+    scrollBtn.className = 'scroll-to-top';
+    scrollBtn.innerHTML = '↑';
+    scrollBtn.setAttribute('aria-label', 'Scroll to top');
+    document.body.appendChild(scrollBtn);
+    
+    scrollBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    });
+}
+
+// Enhanced mobile menu functionality
+function setupMobileMenu() {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navTabs = document.querySelector('.nav-tabs');
+    
+    if (mobileToggle && navTabs) {
+        mobileToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navTabs.classList.toggle('mobile-open');
+            this.setAttribute('aria-expanded', navTabs.classList.contains('mobile-open'));
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navTabs.contains(e.target) && !mobileToggle.contains(e.target)) {
+                navTabs.classList.remove('mobile-open');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Close mobile menu on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navTabs.classList.remove('mobile-open');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+}
+
+// Enhanced form validation
+function enhancedFormValidation() {
+    const form = document.getElementById('registration-form');
+    if (!form) return;
+    
+    const inputs = form.querySelectorAll('input, select, textarea');
+    
+    inputs.forEach(input => {
+        // Real-time validation
+        input.addEventListener('input', function() {
+            validateField(this);
+        });
+        
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
+    });
+    
+    function validateField(field) {
+        const value = field.value.trim();
+        const isRequired = field.hasAttribute('required');
+        let isValid = true;
+        let errorMessage = '';
+        
+        // Remove existing error styling
+        field.classList.remove('error');
+        removeErrorMessage(field);
+        
+        if (isRequired && !value) {
+            isValid = false;
+            errorMessage = currentLanguage === 'en' ? 'This field is required' : '이 필드는 필수입니다';
+        } else if (value) {
+            // Specific field validations
+            switch (field.type) {
+                case 'email':
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) {
+                        isValid = false;
+                        errorMessage = currentLanguage === 'en' ? 'Please enter a valid email' : '유효한 이메일을 입력하세요';
+                    }
+                    break;
+                case 'tel':
+                    const phoneRegex = /^[\+]?[0-9\s\-\(\)]{8,}$/;
+                    if (!phoneRegex.test(value)) {
+                        isValid = false;
+                        errorMessage = currentLanguage === 'en' ? 'Please enter a valid phone number' : '유효한 전화번호를 입력하세요';
+                    }
+                    break;
+                case 'number':
+                    const num = parseInt(value);
+                    if (field.id === 'age' && (num < 16 || num > 80)) {
+                        isValid = false;
+                        errorMessage = currentLanguage === 'en' ? 'Age must be between 16 and 80' : '나이는 16세에서 80세 사이여야 합니다';
+                    }
+                    break;
+            }
+        }
+        
+        if (!isValid) {
+            field.classList.add('error');
+            showErrorMessage(field, errorMessage);
+        }
+        
+        return isValid;
+    }
+    
+    function showErrorMessage(field, message) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.textContent = message;
+        errorDiv.style.color = '#dc3545';
+        errorDiv.style.fontSize = '0.85rem';
+        errorDiv.style.marginTop = '0.25rem';
+        field.parentNode.appendChild(errorDiv);
+    }
+    
+    function removeErrorMessage(field) {
+        const errorMessage = field.parentNode.querySelector('.error-message');
+        if (errorMessage) {
+            errorMessage.remove();
+        }
+    }
+}
+
+// Initialize all functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize FAQ functionality
+    initializeFAQ();
+    
+    // Create scroll to top button
+    createScrollToTopButton();
+    
+    // Setup mobile menu
+    setupMobileMenu();
+    
+    // Enhanced form validation
+    enhancedFormValidation();
+    
+    // Add smooth scrolling to navigation links
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = this.getAttribute('href');
+            smoothScroll(target);
+        });
+    });
+    
+    // Close mobile menu when clicking on a nav item
+    const navTabButtons = document.querySelectorAll('.nav-tab');
+    navTabButtons.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const navTabs = document.querySelector('.nav-tabs');
+            if (navTabs && navTabs.classList.contains('mobile-open')) {
+                navTabs.classList.remove('mobile-open');
+                const mobileToggle = document.querySelector('.mobile-menu-toggle');
+                if (mobileToggle) {
+                    mobileToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    });
+    
+    // Lazy loading for images
+    if ('IntersectionObserver' in window) {
+        const images = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        images.forEach(img => imageObserver.observe(img));
+    }
+    
+    // Add loading animation
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 100);
+    
+    // Parallax effect for header background (throttled)
+    let ticking = false;
+    function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const header = document.querySelector('header');
+        if (header) {
+            header.style.transform = `translateY(${scrolled * 0.3}px)`;
+        }
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    });
+    
+    // Animate elements on scroll
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    if (animatedElements.length > 0 && 'IntersectionObserver' in window) {
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        animatedElements.forEach(el => animationObserver.observe(el));
+    }
+    
+    // Handle form submission with enhanced validation
+    const form = document.getElementById('registration-form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate all fields
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            let allValid = true;
+            
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.classList.add('error');
+                    allValid = false;
+                }
+            });
+            
+            if (allValid) {
+                handleFormSubmission(e);
+            } else {
+                const firstError = form.querySelector('.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+    }
+});
+
 // Export functions for global use
 window.toggleLanguage = toggleLanguage;
 window.showSection = showSection;
