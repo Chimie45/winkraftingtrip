@@ -12,13 +12,12 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header Section -->
         <header>
             <div class="header-content">
                 <div class="logo-section">
                     <img src="assets/images/winklogo.png" alt="WinK Logo" class="logo-img">
                     <div class="header-title">
-                        <h1>
+                        <h1 class="animated-title">
                             <span class="en">2025 Summer Rafting Trip</span>
                             <span class="ko hidden">2025 여름 래프팅 여행</span>
                         </h1>
@@ -32,32 +31,27 @@
                     <span id="lang-btn-text">한국어</span>
                 </button>
             </div>
+            <nav class="sticky-nav">
+                <button class="mobile-menu-toggle">☰</button>
+                <div class="nav-tabs">
+                    <button class="nav-tab active" onclick="showSection('trip-info')">
+                        <span class="en">Trip Information</span>
+                        <span class="ko hidden">여행 정보</span>
+                    </button>
+                    <button class="nav-tab" onclick="showSection('about')">
+                        <span class="en">About WinK</span>
+                        <span class="ko hidden">WinK 소개</span>
+                    </button>
+                    <button class="nav-tab" onclick="showSection('register')">
+                        <span class="en">Register Now</span>
+                        <span class="ko hidden">지금 신청하기</span>
+                    </button>
+                </div>
+            </nav>
         </header>
 
-        <!-- Navigation Section -->
-        <nav>
-            <button class="mobile-menu-toggle">☰</button>
-            <div class="nav-tabs">
-                <button class="nav-tab active" onclick="showSection('trip-info')">
-                    <span class="en">Trip Information</span>
-                    <span class="ko hidden">여행 정보</span>
-                </button>
-                <button class="nav-tab" onclick="showSection('about')">
-                    <span class="en">About WinK</span>
-                    <span class="ko hidden">WinK 소개</span>
-                </button>
-                <button class="nav-tab" onclick="showSection('register')">
-                    <span class="en">Register Now</span>
-                    <span class="ko hidden">지금 신청하기</span>
-                </button>
-            </div>
-        </nav>
-
-        <!-- Main Content Area -->
         <div class="content">
-            <!-- Trip Info Section -->
             <div id="trip-info" class="main-section">
-                <!-- Sidebar with Vertical Tabs -->
                 <div class="sidebar">
                     <button class="sidebar-tab active" onclick="showTripTab('introduction')">
                         <span class="en">🌟 Introduction</span>
@@ -93,9 +87,7 @@
                     </button>
                 </div>
 
-                <!-- Main Content Area -->
                 <div class="main-content">
-                    <!-- Introduction Tab -->
                     <div id="introduction" class="tab-content active animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
@@ -172,7 +164,6 @@
                         </div>
                     </div>
 
-                    <!-- Rafting Tab -->
                     <div id="rafting" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
@@ -213,7 +204,7 @@
                                 <h3>🏔️ 한탄강 경험</h3>
                                 <p>래프팅 여정은 국제 인증 가이드들의 종합적인 안전 브리핑으로 시작됩니다. 한국에서 가장 장관인 풍경을 통과하는 수상 모험을 시작하기 전에 적절한 패들링 기술, 안전 절차, 강 항해를 배웁니다.</p>
 
-                                <p>한탄강은 스릴 넘치는 Class II-III 급류와 숨막히는 산 전망을 감상할 수 있는 고요한 떠있는 구간의 완벽한 조합을 제공합니다. 잔잔한 순간에는 한국 고라니, 산매, 그리고 가끔 강 수달 가족을 포함한 토종 야생동물을 찾아보세요!</p>
+                                <p>한탄강은 스릴 넘치는 Class II-III 급류와 숨막히는 산 전망을 감상할 수 있는 고요한 떠있는 구간의 완벽한 조합을 제공합니다. 잔잔한 순간에는 한국 고라니, 산매, 그리고 가끔 강 수달 가족을 찾아보세요!</p>
 
                                 <h3>🛡️ 프리미엄 안전 및 장비</h3>
                                 <p>여러분의 안전이 우리의 최우선 순위입니다. 모든 참가자는 충격 등급 헬멧, 해안 경비대 승인 구명조끼, 열 웻슈트(온도 의존), 탄소 섬유 패들을 포함한 전문급 장비를 받습니다. 우리의 래프트는 매일 안전 점검을 받고 국제 급류 안전 기준을 충족합니다.</p>
@@ -221,7 +212,6 @@
                         </div>
                     </div>
 
-                    <!-- Paintball Tab -->
                     <div id="paintball" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
@@ -256,7 +246,7 @@
                                     <h4>⚔️ 전투 경기장 세부사항</h4>
                                     <p><strong>소요시간:</strong> 전술 브리핑 및 다수 라운드 포함 3시간<br>
                                     <strong>게임 모드:</strong> 깃발 뺏기, 팀 제거, VIP 호위, 언덕의 왕<br>
-                                    <strong>장비:</strong> 반자동 마커, 프리미엄 페인트볼 500발, 완전 보호 장비<br>
+                                    <strong>장비:</b> 반자동 마커, 프리미엄 페인트볼 500발, 완전 보호 장비<br>
                                     <strong>경기장 크기:</strong> 2헥타르 자연 숲 전장</p>
                                 </div>
 
@@ -272,7 +262,6 @@
                         </div>
                     </div>
 
-                    <!-- ATV Tab -->
                     <div id="atv" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
@@ -293,7 +282,6 @@
 
                                 <h3>🎓 Professional Training Program</h3>
                                 <p>All riders participate in our comprehensive ATV training program covering vehicle operation, safety protocols, and trail etiquette. Our certified instructors ensure every participant feels confident and prepared before accessing the mountain trails. No prior ATV experience required!</p>
-
                                 <h3>🛡️ Premium Safety Standards</h3>
                                 <p>Safety is paramount in our ATV operations. All riders receive DOT-approved helmets, protective eyewear, and safety briefings. Our ATVs undergo pre-ride safety inspections and feature automatic transmissions for easier handling. Professional guides accompany all trail rides with radio communication for immediate assistance.</p>
                             </div>
@@ -323,7 +311,6 @@
                         </div>
                     </div>
 
-                    <!-- Bungee Jumping Tab -->
                     <div id="bungee" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
@@ -374,7 +361,6 @@
                         </div>
                     </div>
 
-                    <!-- Food and Lodging Tab -->
                     <div id="food" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
@@ -425,7 +411,6 @@
                         </div>
                     </div>
 
-                    <!-- Transportation Tab -->
                     <div id="transportation" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
@@ -476,7 +461,6 @@
                         </div>
                     </div>
 
-                    <!-- FAQ Tab -->
                     <div id="faq" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
@@ -621,7 +605,6 @@
                 </div>
             </div>
 
-            <!-- About WinK Section -->
             <div id="about" class="main-section hidden">
                 <div class="main-content">
                     <div class="content-section">
@@ -704,7 +687,6 @@
                 </div>
             </div>
 
-            <!-- Registration Section -->
             <div id="register" class="main-section hidden">
                 <div class="main-content">
                     <div class="content-section">
@@ -936,7 +918,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Toggle (Hidden by default, shown on mobile) -->
         <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
     </div>
 
