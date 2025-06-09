@@ -3,121 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WinK - 2025 Summer Rafting Trip</title>
-    
-    <!-- Modern Font -->
+    <title>WinK - 2025 Summer Rafting Trip | Korean Adventure Experience</title>
+    <meta name="description" content="Join WinK for an unforgettable 2025 summer adventure trip in Korea featuring rafting, paintball, ATV rides, bungee jumping and more!">
+    <meta name="keywords" content="Korea adventure, rafting Korea, WinK, paintball, ATV, bungee jumping, summer 2025">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <!-- Particle Background (optional) -->
-    <div class="particles" id="particles"></div>
-    
     <div class="container">
-        <!-- Modern Header -->
+        <!-- Header Section -->
         <header>
             <div class="header-content">
                 <div class="logo-section">
-                    <img src="/assets/images/winklogo.png" alt="WinK Logo" class="logo">
-                    <h1 id="page-title">2025 Summer Rafting Trip</h1>
+                    <img src="assets/images/winklogo.png" alt="WinK Logo" class="logo-img">
+                    <div class="header-title">
+                        <h1>
+                            <span class="en">2025 Summer Rafting Trip</span>
+                            <span class="ko hidden">2025 여름 래프팅 여행</span>
+                        </h1>
+                        <div class="subtitle">
+                            <span class="en">When in Korea Adventure Experience</span>
+                            <span class="ko hidden">When in Korea 어드벤처 경험</span>
+                        </div>
+                    </div>
                 </div>
-                
-                <nav>
-                    <ul>
-                        <li><a href="#" data-nav="tripInfo">Trip Info</a></li>
-                        <li><a href="#" data-nav="aboutWink" onclick="showAboutWink()">About WinK</a></li>
-                        <li><a href="#" data-nav="register" onclick="openRegistrationForm()">Register</a></li>
-                        <li>
-                            <select id="langSwitcher">
-                                <option value="en">🌐 English</option>
-                                <option value="ko">🇰🇷 한국어</option>
-                            </select>
-                        </li>
-                    </ul>
-                </nav>
+                <button class="lang-toggle" onclick="toggleLanguage()">
+                    <span id="lang-btn-text">한국어</span>
+                </button>
             </div>
         </header>
 
-        <!-- Main Content -->
-        <main>
-            <!-- Modern Tab Navigation -->
-            <aside class="tab-navigation">
-                <button class="tab-button active" data-tab="introduction">
-                    <span>Introduction</span>
+        <!-- Navigation Section -->
+        <nav>
+            <button class="mobile-menu-toggle">☰</button>
+            <div class="nav-tabs">
+                <button class="nav-tab active" onclick="showSection('trip-info')">
+                    <span class="en">Trip Information</span>
+                    <span class="ko hidden">여행 정보</span>
                 </button>
-                <button class="tab-button" data-tab="rafting">
-                    <span>Rafting</span>
+                <button class="nav-tab" onclick="showSection('about')">
+                    <span class="en">About WinK</span>
+                    <span class="ko hidden">WinK 소개</span>
                 </button>
-                <button class="tab-button" data-tab="paintball">
-                    <span>Paintball</span>
+                <button class="nav-tab" onclick="showSection('register')">
+                    <span class="en">Register Now</span>
+                    <span class="ko hidden">지금 신청하기</span>
                 </button>
-                <button class="tab-button" data-tab="atv">
-                    <span>ATV / Fourwheeling</span>
-                </button>
-                <button class="tab-button" data-tab="bungee">
-                    <span>Bungee Jumping</span>
-                </button>
-                <button class="tab-button" data-tab="food">
-                    <span>Food & Lodging</span>
-                </button>
-                <button class="tab-button" data-tab="transportation">
-                    <span>Transportation</span>
-                </button>
-                <button class="tab-button" data-tab="faq">
-                    <span>FAQ</span>
-                </button>
-            </aside>
+            </div>
+        </nav>
 
-            <!-- Content Section with Glassmorphism -->
-            <section class="content-section">
-                <div id="content-area">
-                    <h2>Welcome to WinK's 2025 Summer Adventure!</h2>
-                    <img src="/assets/images/intro.png" alt="Introduction" class="content-image">
-                    <p>Join When in Korea (WinK) for an unforgettable summer rafting trip packed with thrilling activities and amazing memories. Experience the best of Korean outdoor adventures with fellow adventurers!</p>
+        <!-- Main Content Area -->
+        <div class="content">
+            <!-- Trip Info Section -->
+            <div id="trip-info" class="main-section">
+                <!-- Sidebar with Vertical Tabs -->
+                <div class="sidebar">
+                    <button class="sidebar-tab active" onclick="showTripTab('introduction')">
+                        <span class="en">🌟 Introduction</span>
+                        <span class="ko hidden">🌟 소개</span>
+                    </button>
+                    <button class="sidebar-tab" onclick="showTripTab('rafting')">
+                        <span class="en">🚣 Rafting</span>
+                        <span class="ko hidden">🚣 래프팅</span>
+                    </button>
+                    <button class="sidebar-tab" onclick="showTripTab('paintball')">
+                        <span class="en">🎯 Paintball</span>
+                        <span class="ko hidden">🎯 페인트볼</span>
+                    </button>
+                    <button class="sidebar-tab" onclick="showTripTab('atv')">
+                        <span class="en">🏍️ ATV Adventure</span>
+                        <span class="ko hidden">🏍️ ATV 어드벤처</span>
+                    </button>
+                    <button class="sidebar-tab" onclick="showTripTab('bungee')">
+                        <span class="en">🪂 Bungee Jump</span>
+                        <span class="ko hidden">🪂 번지점프</span>
+                    </button>
+                    <button class="sidebar-tab" onclick="showTripTab('food')">
+                        <span class="en">🍽️ Food & Stay</span>
+                        <span class="ko hidden">🍽️ 식사 및 숙박</span>
+                    </button>
+                    <button class="sidebar-tab" onclick="showTripTab('transportation')">
+                        <span class="en">🚌 Transportation</span>
+                        <span class="ko hidden">🚌 교통편</span>
+                    </button>
+                    <button class="sidebar-tab" onclick="showTripTab('faq')">
+                        <span class="en">❓ FAQ</span>
+                        <span class="ko hidden">❓ 자주 묻는 질문</span>
+                    </button>
                 </div>
-            </section>
-        </main>
-    </div>
 
-    <!-- JavaScript -->
-    <script src="assets/js/scripts.js"></script>
-    
-    <!-- Optional: Particle Animation Script -->
-    <script>
-        // Simple particle effect
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.style.position = 'absolute';
-            particle.style.width = '2px';
-            particle.style.height = '2px';
-            particle.style.background = 'rgba(0, 212, 255, 0.5)';
-            particle.style.borderRadius = '50%';
-            particle.style.pointerEvents = 'none';
-            particle.style.left = Math.random() * window.innerWidth + 'px';
-            particle.style.top = window.innerHeight + 'px';
-            particle.style.boxShadow = '0 0 6px rgba(0, 212, 255, 0.5)';
-            
-            document.getElementById('particles').appendChild(particle);
-            
-            const duration = Math.random() * 3000 + 2000;
-            const horizontalMovement = (Math.random() - 0.5) * 100;
-            
-            particle.animate([
-                { transform: 'translate(0, 0) scale(0)', opacity: 0 },
-                { transform: `translate(${horizontalMovement}px, -${window.innerHeight + 100}px) scale(1)`, opacity: 1 },
-                { transform: `translate(${horizontalMovement * 2}px, -${window.innerHeight + 200}px) scale(0)`, opacity: 0 }
-            ], {
-                duration: duration,
-                easing: 'ease-out'
-            }).onfinish = () => particle.remove();
-        }
-        
-        // Create particles periodically
-        setInterval(createParticle, 300);
-    </script>
-</body>
-</html>
+                <!-- Main Content Area -->
+                <div class="main-content">
+                    <!-- Introduction Tab -->
+                    <div id="introduction" class="tab-content active animate-on-scroll">
+                        <div class="content-section">
+                            <div class="en">
+                                <h1>Welcome to WinK's Ultimate Adventure</h1>
+                                <img src="assets/images/intro.jpg" alt="WinK Adventure Trip Overview">
+                                <p>Get ready for the ultimate Korean adventure experience! WinK (When in Korea) brings you an action-packed summer weekend filled with thrilling activities, authentic Korean cuisine, and unforgettable memories in Korea's stunning natural landscapes.</p>
+                                
+                                <div class="highlight-box">
+                                    <h4>🎯 2025 Summer Trip Highlights</h4>
+                                    <p><strong>Dates:</strong> June - August 2025 (Multiple weekends available)<br>
+                                    <strong>Duration:</strong> 2 Days, 1 Night<br>
+                                    <strong>Price:</strong> ₩280,000 per person (All-inclusive)<br>
+                                    <strong>Group Size:</strong> Limited to 20 adventurers per trip</p>
+                                </div>
+
+                                <h3>What Makes This Summer Trip Special</h3>
+                                <p>Our 2025 summer adventure combines Korea's most exciting outdoor activities in one incredible weekend. From heart-pumping white water rafting through pristine mountain valleys to strategic paintball battles in forest arenas, every moment is designed to create lasting memories while showcasing Korea's natural beauty.</p>
+
+                                <div class="activity-grid">
+                                    <div class="activity-card">
+                                        <h4>🏞️ Premium Adventures</h4>
+                                        <p>White water rafting, tactical paintball, mountain ATV rides, and heart-stopping bungee jumping - all in one epic weekend.</p>
+                                    </div>
+                                    <div class="activity-card">
+                                        <h4>🎒 All-Inclusive Package</h4>
+                                        <p>Luxury transportation, gourmet Korean meals, mountain lodge accommodation, and all safety equipment included.</p>
+                                    </div>
+                                    <div class="activity-card">
+                                        <h4>🛡️ Safety Excellence</h4>
+                                        <p>International-certified guides, premium safety equipment, and comprehensive insurance coverage for peace of mind.</p>
+                                    </div>
+                                    <div class="activity-card">
+                                        <h4>🇰🇷 Cultural Immersion</h4>
+                                        <p>Authentic Korean BBQ experiences, traditional mountain lodge stay, and local cultural insights from expert guides.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ko hidden">
+                                <h1>WinK의 궁극적인 모험에 오신 것을 환영합니다</h1>
+                                <img src="assets/images/intro.jpg" alt="WinK 어드벤처 여행 개요">
+                                <p>최고의 한국 모험 경험을 준비하세요! WinK (When in Korea)는 스릴 넘치는 액티비티, 정통 한국 요리, 그리고 한국의 아름다운 자연 경관에서의 잊을 수 없는 추억으로 가득한 액션 패키지 여름 주말을 선사합니다.</p>
+                                
+                                <div class="highlight-box">
+                                    <h4>🎯 2025 여름 여행 하이라이트</h4>
+                                    <p><strong>날짜:</strong> 2025년 6월 - 8월 (다양한 주말 선택 가능)<br>
+                                    <strong>기간:</strong> 1박 2일<br>
+                                    <strong>가격:</strong> 1인당 ₩280,000 (모든 것 포함)<br>
+                                    <strong>그룹 크기:</strong> 여행당 20명의 모험가로 제한</p>
+                                </div>
+
+                                <h3>이 여름 여행을 특별하게 만드는 것</h3>
+                                <p>우리의 2025년 여름 어드벤처는 한국에서 가장 흥미진진한 야외 액티비티들을 하나의 놀라운 주말에 결합했습니다. 깨끗한 산골짜기를 통한 심장 뛰는 화이트 워터 래프팅부터 숲 경기장에서의 전략적인 페인트볼 전투까지, 모든 순간이 한국의 자연미를 보여주면서 지속적인 추억을 만들도록 설계되었습니다.</p>
+
+                                <div class="activity-grid">
+                                    <div class="activity-card">
+                                        <h4>🏞️ 프리미엄 어드벤처</h4>
+                                        <p>화이트 워터 래프팅, 전술 페인트볼, 산악 ATV 라이딩, 심장 멈추는 번지점프 - 모두 하나의 서사적인 주말에.</p>
+                                    </div>
+                                    <div class="activity-card">
+                                        <h4>🎒 올 인클루시브 패키지</h4>
+                                        <p>럭셔리 교통편, 미식 한국 식사, 산장 숙박, 모든 안전 장비 포함.</p>
+                                    </div>
+                                    <div class="activity-card">
+                                        <h4>🛡️ 안전 우수성</h4>
+                                        <p>국제 인증 가이드, 프리미엄 안전 장비, 마음의 평화를 위한 종합 보험 적용.</p>
+                                    </div>
+                                    <div class="activity-card">
+                                        <h4>🇰🇷 문화 몰입</h4>
+                                        <p>정통 한국 BBQ 경험, 전통 산장 숙박, 전문 가이드의 현지 문화 통찰.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rafting Tab -->
+                    <div id="rafting" class="tab-content animate-on-scroll">
+                        <div class="content-section">
+                            <div class="en">
+                                <h2>🚣 Premium White Water Rafting</h2>
+                                <img src="assets/images/rafting.jpg" alt="White Water Rafting on Korean Rivers">
+                                <p>Experience the adrenaline rush of navigating Korea's pristine mountain rivers with our internationally certified rafting guides. Our summer rafting adventure takes place on the stunning Hantan River, renowned for its crystal-clear glacial waters and perfectly graded rapids.</p>
+
+                                <div class="highlight-box">
+                                    <h4>🌊 Rafting Experience Details</h4>
+                                    <p><strong>Duration:</strong> 4 hours including comprehensive safety briefing<br>
+                                    <strong>Difficulty:</strong> Class II-III rapids (Perfect for beginners to intermediates)<br>
+                                    <strong>Group Size:</strong> 6-8 adventurers per professional-grade raft<br>
+                                    <strong>Season:</strong> June-August (Optimal water levels and weather)</p>
+                                </div>
+
+                                <h3>🏔️ The Hantan River Experience</h3>
+                                <p>Your rafting journey begins with a comprehensive safety briefing from our internationally certified guides. Learn proper paddling techniques, safety procedures, and river navigation before embarking on your aquatic adventure through some of Korea's most spectacular scenery.</p>
+
+                                <p>The Hantan River offers the perfect combination of thrilling Class II-III rapids and serene floating sections where you can admire the breathtaking mountain vistas. During calmer moments, keep your eyes peeled for native wildlife including Korean water deer, mountain hawks, and the occasional river otter family!</p>
+
+                                <h3>🛡️ Premium Safety & Equipment</h3>
+                                <p>Your safety is our top priority. All participants receive professional-grade equipment including impact-rated helmets, Coast Guard approved life jackets, thermal wetsuits (temperature dependent), and carbon fiber paddles. Our rafts undergo daily safety inspections and meet international whitewater safety standards.</p>
+                            </div>
+
+                            <div class="ko hidden">
+                                <h2>🚣 프리미엄 화이트 워터 래프팅</h2>
+                                <img src="assets/images/rafting.jpg" alt="한국 강에서의 화이트 워터 래프팅">
+                                <p>국제 인증 래프팅 가이드와 함께 한국의 깨끗한 산악 강을 항해하는 아드레날린 러시를 경험하세요. 우리의 여름 래프팅 어드벤처는 수정같이 맑은 빙하수와 완벽하게 등급화된 급류로 유명한 아름다운 한탄강에서 진행됩니다.</p>
+
+                                <div class="highlight-box">
+                                    <h4>🌊 래프팅 경험 세부사항</h4>
+                                    <p><strong>소요시간:</strong> 종합적인 안전 브리핑 포함 4시간<br>
+                                    <strong>난이도:</strong> Class II-III 급류 (초급자부터 중급자까지 완벽)<br>
+                                    <strong>그룹 크기:</strong> 전문급 래프트당 6-8명의 모험가<br>
+                                    <strong>시즌:</strong> 6월-8월 (최적의 수위 및 날씨)</p>
+                                </div>
+
+                                <h3>🏔️ 한탄강 경험</h3>
+                                <p>래프팅 여정은 국제 인증 가이드들의 종합적인 안전 브리핑으로 시작됩니다. 한국에서 가장 장관인 풍경을 통과하는 수상 모험을 시작하기 전에 적절한 패들링 기술, 안전 절차, 강 항해를 배웁니다.</p>
+
+                                <p>한탄강은 스릴 넘치는 Class II-III 급류와 숨막히는 산 전망을 감상할 수 있는 고요한 떠있는 구간의 완벽한 조합을 제공합니다. 잔잔한 순간에는 한국 고라니, 산매, 그리고 가끔 강 수달 가족을 포함한 토종 야생동물을 찾아보세요!</p>
+
+                                <h3>🛡️ 프리미엄 안전 및 장비</h3>
+                                <p>여러분의 안전이 우리의 최우선 순위입니다. 모든 참가자는 충격 등급 헬멧, 해안 경비대 승인 구명조끼, 열 웻슈트(온도 의존), 탄소 섬유 패들을 포함한 전문급 장비를 받습니다. 우리의 래프트는 매일 안전 점검을 받고 국제 급류 안전 기준을 충족합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paintball Tab -->
+                    <div id="paintball" class="tab-content animate-on-scroll">
+                        <div class="content-section">
+                            <div class="en">
+                                <h2>🎯 Tactical Paintball Combat Arena</h2>
+                                <img src="assets/images/paintball.jpg" alt="Professional Paintball Combat Arena">
+                                <p>Engage in strategic team-based combat in our professionally designed forest paintball arena. With multiple game scenarios and natural terrain features, every battle becomes a unique tactical challenge that tests both individual skill and team coordination.</p>
+
+                                <div class="highlight-box">
+                                    <h4>⚔️ Combat Arena Details</h4>
+                                    <p><strong>Duration:</strong> 3 hours including tactical briefing and multiple rounds<br>
+                                    <strong>Game Modes:</strong> Capture the Flag, Team Elimination, VIP Escort, King of the Hill<br>
+                                    <strong>Equipment:</strong> Semi-automatic markers, 500 premium paintballs, full protective gear<br>
+                                    <strong>Arena Size:</strong> 2-hectare natural forest battlefield</p>
+                                </div>
+
+                                <h3>🌲 Professional Arena Features</h3>
+                                <p>Our paintball battlefield utilizes natural forest terrain enhanced with strategic bunkers, elevated positions, and tactical barriers. The wooded environment provides excellent natural cover while multiple elevation changes create dynamic combat scenarios that require both strategy and quick thinking.</p>
+
+                                <h3>🎮 Dynamic Game Formats</h3>
+                                <p>Experience various tactical scenarios from classic team elimination to complex objective-based missions. Our professional game marshals ensure fair play while adapting scenarios based on skill levels and group dynamics. Strategy, communication, and teamwork are your keys to victory!</p>
+
+                                <h3>🛡️ Safety & Equipment Standards</h3>
+                                <p>All participants receive professional-grade protective equipment including full-face masks, padded vests, and gloves. Our paintball markers are chronographed for safety compliance and use biodegradable, washable paint that's environmentally friendly.</p>
+                            </div>
+
+                            <div class="ko hidden">
+                                <h2>🎯 전술 페인트볼 전투 경기장</h2>
+                                <img src="assets/images/paintball.jpg" alt="전문 페인트볼 전투 경기장">
+                                <p>전문적으로 설계된 숲 페인트볼 경기장에서 전략적 팀 기반 전투에 참여하세요. 다양한 게임 시나리오와 자연 지형 특성으로 모든 전투가 개인 기술과 팀 협조 모두를 테스트하는 독특한 전술적 도전이 됩니다.</p>
+
+                                <div class="highlight-box">
+                                    <h4>⚔️ 전투 경기장 세부사항</h4>
+                                    <p><strong>소요시간:</strong> 전술 브리핑 및 다수 라운드 포함 3시간<br>
+                                    <strong>게임 모드:</strong> 깃발 뺏기, 팀 제거, VIP 호위, 언덕의 왕<br>
+                                    <strong>장비:</strong> 반자동 마커, 프리미엄 페인트볼 500발, 완전 보호 장비<br>
+                                    <strong>경기장 크기:</strong> 2헥타르 자연 숲 전장</p>
+                                </div>
+
+                                <h3>🌲 전문 경기장 특징</h3>
+                                <p>우리의 페인트볼 전장은 전략적 벙커, 고지대 위치, 전술 장벽으로 강화된 자연 숲 지형을 활용합니다. 숲 환경은 우수한 자연 엄폐물을 제공하며 다양한 고도 변화는 전략과 빠른 사고 모두를 요구하는 역동적인 전투 시나리오를 만들어냅니다.</p>
+
+                                <h3>🎮 다이나믹 게임 형식</h3>
+                                <p>클래식 팀 제거부터 복잡한 목표 기반 미션까지 다양한 전술 시나리오를 경험하세요. 우리의 전문 게임 마샬은 기술 수준과 그룹 역학에 따라 시나리오를 조정하면서 공정한 플레이를 보장합니다. 전략, 의사소통, 팀워크가 승리의 열쇠입니다!</p>
+
+                                <h3>🛡️ 안전 및 장비 기준</h3>
+                                <p>모든 참가자는 풀 페이스 마스크, 패딩 조끼, 장갑을 포함한 전문급 보호 장비를 받습니다. 우리의 페인트볼 마커는 안전 준수를 위해 크로노그래프되며 환경 친화적인 생분해성, 세탁 가능한 페인트를 사용합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ATV Tab -->
+                    <div id="atv" class="tab-content animate-on-scroll">
+                        <div class="content-section">
+                            <div class="en">
+                                <h2>🏍️ Mountain ATV Adventure Experience</h2>
+                                <img src="assets/images/atv.jpg" alt="ATV Adventure Through Korean Mountains">
+                                <p>Conquer rugged mountain trails on powerful all-terrain vehicles through some of Korea's most spectacular wilderness areas. Our ATV adventure combines adrenaline-pumping off-road action with breathtaking scenic views of pristine mountain landscapes.</p>
+
+                                <div class="highlight-box">
+                                    <h4>🏔️ ATV Adventure Details</h4>
+                                    <p><strong>Duration:</strong> 2.5 hours including comprehensive safety training<br>
+                                    <strong>Vehicle Type:</strong> 400cc automatic transmission ATVs with 4WD capability<br>
+                                    <strong>Trail Difficulty:</strong> Beginner to Intermediate with multiple route options<br>
+                                    <strong>Terrain:</strong> Mountain trails, stream crossings, forest paths</p>
+                                </div>
+
+                                <h3>🌄 Epic Trail Experience</h3>
+                                <p>Navigate through diverse Korean mountain terrain including forest single tracks, rocky stream crossings, and panoramic ridge lines with stunning valley views. Our carefully planned routes showcase Korea's natural beauty while providing the perfect balance of excitement and safety for riders of all experience levels.</p>
+
+                                <h3>🎓 Professional Training Program</h3>
+                                <p>All riders participate in our comprehensive ATV training program covering vehicle operation, safety protocols, and trail etiquette. Our certified instructors ensure every participant feels confident and prepared before accessing the mountain trails. No prior ATV experience required!</p>
+
+                                <h3>🛡️ Premium Safety Standards</h3>
+                                <p>Safety is paramount in our ATV operations. All riders receive DOT-approved helmets, protective eyewear, and safety briefings. Our ATVs undergo pre-ride safety inspections and feature automatic transmissions for easier handling. Professional guides accompany all trail rides with radio communication for immediate assistance.</p>
+                            </div>
+
+                            <div class="ko hidden">
+                                <h2>🏍️ 산악 ATV 어드벤처 경험</h2>
+                                <img src="assets/images/atv.jpg" alt="한국 산을 통한 ATV 어드벤처">
+                                <p>한국에서 가장 장관인 야생 지역을 통과하는 강력한 전지형 차량으로 험준한 산악 트레일을 정복하세요. 우리의 ATV 어드벤처는 아드레날린이 솟구치는 오프로드 액션과 깨끗한 산악 경관의 숨막히는 경치를 결합합니다.</p>
+
+                                <div class="highlight-box">
+                                    <h4>🏔️ ATV 어드벤처 세부사항</h4>
+                                    <p><strong>소요시간:</strong> 종합적인 안전 교육 포함 2.5시간<br>
+                                    <strong>차량 유형:</strong> 4WD 기능이 있는 400cc 자동 변속 ATV<br>
+                                    <strong>트레일 난이도:</strong> 다중 루트 옵션이 있는 초급자부터 중급자<br>
+                                    <strong>지형:</strong> 산악 트레일, 개울 횡단, 숲길</p>
+                                </div>
+
+                                <h3>🌄 서사적 트레일 경험</h3>
+                                <p>숲 싱글 트랙, 바위 개울 횡단, 멋진 계곡 전망이 있는 파노라마 능선을 포함한 다양한 한국 산악 지형을 항해하세요. 우리의 신중하게 계획된 루트는 모든 경험 수준의 라이더에게 흥미와 안전의 완벽한 균형을 제공하면서 한국의 자연미를 보여줍니다
