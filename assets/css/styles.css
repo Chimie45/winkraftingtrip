@@ -213,6 +213,29 @@ nav {
 }
 
 /* Content Section Styles */
+.content-section {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.content-text {
+    flex: 1;
+}
+
+.content-image {
+    flex: 0 0 300px;
+    text-align: center;
+}
+
+.content-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
 .content-section h1 {
     color: #667eea;
     font-size: 2.5rem;
@@ -523,6 +546,15 @@ nav {
     
     .main-content {
         padding: 2rem;
+    }
+    
+    .content-section {
+        flex-direction: column;
+    }
+    
+    .content-image {
+        flex: none;
+        order: -1;
     }
     
     .activity-grid {
