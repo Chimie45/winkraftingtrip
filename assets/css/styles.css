@@ -11,6 +11,8 @@ body {
     color: #333;
     /* UPDATED: Replaced linear gradient with a tiled background image */
     background-image: url('assets/images/background.jpg');
+    background-repeat: repeat; /* Ensure the image tiles */
+    background-size: auto; /* Allow the image to maintain its original size and tile */
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -67,6 +69,15 @@ header::before {
     width: auto !important;
 }
 
+/* ADDED: Style for the new header title */
+.header-title {
+    color: white;
+    font-size: 2.5rem;
+    margin: 0;
+    flex-grow: 1; /* Allow title to take available space */
+    text-align: center; /* Center the title */
+}
+
 .lang-toggle {
     background: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.3);
@@ -107,7 +118,8 @@ nav {
     border: 2px solid transparent;
     color: white;
     padding: 0.8rem 1.5rem;
-    border-radius: 30px;
+    /* UPDATED: Rounded top corners only */
+    border-radius: 10px 10px 0 0;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 600;
@@ -192,7 +204,8 @@ nav {
 .main-content {
     flex: 1;
     padding: 2.5rem;
-    background: white;
+    /* UPDATED: Changed background to light blue */
+    background: #e0f2f7; /* A light blue color */
     overflow-y: auto;
 }
 
@@ -227,7 +240,8 @@ nav {
     max-width: none !important; /* Override inline max-width */
     height: auto !important; /* Maintain aspect ratio */
     margin: 0.5rem 0 1rem 2rem !important; /* Adjust margins for spacing */
-    /* Inline styles for border-radius and box-shadow are fine, so we don't need to override them */
+    border-radius: 10px; /* Kept existing style */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Kept existing style */
 }
 
 .content-section h1 {
@@ -575,6 +589,11 @@ nav {
         height: 80px !important;
     }
 
+    /* ADDED: Adjust header title for mobile */
+    .header-title {
+        font-size: 1.8rem;
+    }
+
     .nav-tabs {
         flex-direction: column;
         gap: 0.5rem;
@@ -583,6 +602,7 @@ nav {
     .nav-tab {
         padding: 0.6rem 1rem;
         font-size: 0.8rem;
+        border-radius: 10px; /* Revert to fully rounded for mobile */
     }
 
     .content {
@@ -641,6 +661,11 @@ nav {
 
     .logo-img { /* And even smaller on phones */
         height: 60px !important;
+    }
+
+    /* ADDED: Adjust header title for smaller mobile */
+    .header-title {
+        font-size: 1.5rem;
     }
 
     .lang-toggle {
