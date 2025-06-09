@@ -7,6 +7,28 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+    <!-- Cursor Follower -->
+    <div class="cursor-follower"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="assets/images/winklogo.png" alt="WinK Logo">
+            </div>
+            <div class="loading-text">
+                <span data-en="Preparing Your Adventure..." data-kr="모험을 준비 중...">Preparing Your Adventure...</span>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
     <!-- Navigation Header -->
     <header class="navbar">
         <div class="nav-container">
@@ -33,133 +55,548 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with 3D Elements -->
     <section class="hero-section">
+        <div class="hero-bg-animation"></div>
+        <div class="floating-elements">
+            <div class="float-element float-1">🏔️</div>
+            <div class="float-element float-2">🚁</div>
+            <div class="float-element float-3">🌊</div>
+            <div class="float-element float-4">🎯</div>
+        </div>
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title" data-en="About When in Korea" data-kr="When in Korea 소개">About When in Korea</h1>
-                <p class="hero-subtitle" data-en="Discover the authentic Korean adventure experience" data-kr="진정한 한국의 모험을 경험해보세요">Discover the authentic Korean adventure experience</p>
+                <div class="hero-badge" data-en="Premium Adventure Tours" data-kr="프리미엄 어드벤처 투어">Premium Adventure Tours</div>
+                <h1 class="hero-title">
+                    <span class="title-line" data-en="About When in Korea" data-kr="When in Korea 소개">About When in Korea</span>
+                    <span class="title-accent">WinK</span>
+                </h1>
+                <p class="hero-subtitle" data-en="Where every moment becomes an unforgettable story in the heart of Korea" data-kr="한국의 심장부에서 모든 순간이 잊을 수 없는 이야기가 되는 곳">Where every moment becomes an unforgettable story in the heart of Korea</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="500">0</span>
+                        <span class="stat-label" data-en="Adventures" data-kr="모험">Adventures</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="15">0</span>
+                        <span class="stat-label" data-en="Activities" data-kr="활동">Activities</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="98">0</span>
+                        <span class="stat-label" data-en="% Satisfaction" data-kr="% 만족도">% Satisfaction</span>
+                    </div>
+                </div>
             </div>
-            <div class="hero-image">
-                <img src="assets/images/intro.jpg" alt="Korea Adventure">
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <img src="assets/images/intro.jpg" alt="Korea Adventure" class="hero-image">
+                    <div class="image-overlay"></div>
+                    <div class="play-button" data-video="intro">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="floating-cards">
+                    <div class="mini-card card-1">
+                        <div class="card-icon">🎪</div>
+                        <span data-en="Exciting" data-kr="흥미진진">Exciting</span>
+                    </div>
+                    <div class="mini-card card-2">
+                        <div class="card-icon">🛡️</div>
+                        <span data-en="Safe" data-kr="안전">Safe</span>
+                    </div>
+                    <div class="mini-card card-3">
+                        <div class="card-icon">⭐</div>
+                        <span data-en="Premium" data-kr="프리미엄">Premium</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-text" data-en="Discover More" data-kr="더 알아보기">Discover More</div>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Interactive Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Our Journey" data-kr="우리의 여정">Our Journey</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-year="2020">
+                    <div class="timeline-content">
+                        <h3 data-en="The Beginning" data-kr="시작">The Beginning</h3>
+                        <p data-en="Founded with a vision to share Korea's hidden adventures" data-kr="한국의 숨겨진 모험을 공유하려는 비전으로 설립">Founded with a vision to share Korea's hidden adventures</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="2022">
+                    <div class="timeline-content">
+                        <h3 data-en="Expansion" data-kr="확장">Expansion</h3>
+                        <p data-en="Added premium activities and partnered with local experts" data-kr="프리미엄 활동 추가 및 현지 전문가와 파트너십">Added premium activities and partnered with local experts</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="2024">
+                    <div class="timeline-content">
+                        <h3 data-en="Innovation" data-kr="혁신">Innovation</h3>
+                        <p data-en="Launched cutting-edge adventure experiences across Korea" data-kr="한국 전역에서 최첨단 어드벤처 경험 출시">Launched cutting-edge adventure experiences across Korea</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="2025">
+                    <div class="timeline-content">
+                        <h3 data-en="The Future" data-kr="미래">The Future</h3>
+                        <p data-en="Pioneering sustainable adventure tourism in Korea" data-kr="한국의 지속 가능한 어드벤처 관광 선도">Pioneering sustainable adventure tourism in Korea</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Story Section -->
-        <section class="story-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-en="Our Story" data-kr="우리의 이야기">Our Story</h2>
-                    <div class="accent-line"></div>
-                </div>
-                <div class="story-content">
-                    <div class="story-text">
-                        <p data-en="When in Korea (WinK) was born from a passion for sharing the incredible adventures that South Korea has to offer. Founded by adventure enthusiasts who fell in love with Korea's diverse landscapes and rich culture, we specialize in creating unforgettable experiences that go beyond typical tourist attractions." data-kr="When in Korea (WinK)는 대한민국이 제공하는 놀라운 모험을 공유하고자 하는 열정에서 탄생했습니다. 한국의 다양한 풍경과 풍부한 문화에 매료된 모험 애호가들이 설립한 저희는 일반적인 관광 명소를 넘어서는 잊을 수 없는 경험을 만드는 것을 전문으로 합니다.">
-                            When in Korea (WinK) was born from a passion for sharing the incredible adventures that South Korea has to offer. Founded by adventure enthusiasts who fell in love with Korea's diverse landscapes and rich culture, we specialize in creating unforgettable experiences that go beyond typical tourist attractions.
-                        </p>
-                        <p data-en="From heart-pounding white-water rafting in pristine mountain valleys to exhilarating ATV rides through scenic countryside, we curate adventures that showcase Korea's natural beauty while providing safe, professional, and thrilling experiences for adventurers of all levels." data-kr="깨끗한 산골짜기에서의 스릴 넘치는 래프팅부터 아름다운 시골을 가로지르는 신나는 ATV 라이딩까지, 저희는 한국의 자연미를 보여주면서 모든 수준의 모험가들에게 안전하고 전문적이며 짜릿한 경험을 제공하는 모험을 기획합니다.">
-                            From heart-pounding white-water rafting in pristine mountain valleys to exhilarating ATV rides through scenic countryside, we curate adventures that showcase Korea's natural beauty while providing safe, professional, and thrilling experiences for adventurers of all levels.
-                        </p>
-                    </div>
-                </div>
+    <!-- Enhanced Activities Grid -->
+    <section class="activities-showcase">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Epic Adventures Await" data-kr="장대한 모험이 기다립니다">Epic Adventures Await</h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle" data-en="From adrenaline-pumping thrills to cultural immersions" data-kr="아드레날린 넘치는 스릴부터 문화 체험까지">From adrenaline-pumping thrills to cultural immersions</p>
             </div>
-        </section>
+            
+            <div class="activity-filter">
+                <button class="filter-btn active" data-filter="all" data-en="All Adventures" data-kr="모든 모험">All Adventures</button>
+                <button class="filter-btn" data-filter="extreme" data-en="Extreme Sports" data-kr="익스트림 스포츠">Extreme Sports</button>
+                <button class="filter-btn" data-filter="water" data-en="Water Activities" data-kr="수상 활동">Water Activities</button>
+                <button class="filter-btn" data-filter="cultural" data-en="Cultural" data-kr="문화">Cultural</button>
+                <button class="filter-btn" data-filter="adventure" data-en="Adventure" data-kr="어드벤처">Adventure</button>
+            </div>
 
-        <!-- Activities Preview -->
-        <section class="activities-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-en="Adventure Awaits" data-kr="모험이 기다립니다">Adventure Awaits</h2>
-                    <div class="accent-line"></div>
-                </div>
-                <div class="activities-grid">
-                    <div class="activity-card">
-                        <div class="activity-image">
-                            <img src="assets/images/rafting.jpg" alt="White Water Rafting">
-                            <div class="activity-overlay">
+            <div class="activities-grid">
+                <!-- Water Activities -->
+                <div class="activity-card premium" data-category="water extreme">
+                    <div class="activity-image">
+                        <img src="assets/images/rafting.jpg" alt="White Water Rafting">
+                        <div class="activity-overlay">
+                            <div class="activity-info">
+                                <span class="activity-level extreme">Extreme</span>
                                 <h3 data-en="White Water Rafting" data-kr="화이트워터 래프팅">White Water Rafting</h3>
-                                <p data-en="Navigate Korea's pristine rapids" data-kr="한국의 깨끗한 급류를 항해하세요">Navigate Korea's pristine rapids</p>
+                                <p data-en="Navigate Korea's most challenging rapids in pristine mountain valleys" data-kr="깨끗한 산골짜기에서 한국의 가장 도전적인 급류를 항해하세요">Navigate Korea's most challenging rapids in pristine mountain valleys</p>
+                                <div class="activity-details">
+                                    <span>⏱️ 4-6 hours</span>
+                                    <span>👥 4-12 people</span>
+                                    <span>📍 Gangwon-do</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="premium-badge" data-en="Premium" data-kr="프리미엄">Premium</div>
+                    </div>
+                </div>
+
+                <div class="activity-card" data-category="water">
+                    <div class="activity-image">
+                        <img src="assets/images/kayaking.jpg" alt="Sea Kayaking">
+                        <div class="activity-overlay">
+                            <div class="activity-info">
+                                <span class="activity-level moderate">Moderate</span>
+                                <h3 data-en="Sea Kayaking" data-kr="바다 카약">Sea Kayaking</h3>
+                                <p data-en="Explore hidden coastal caves and pristine beaches" data-kr="숨겨진 해안 동굴과 깨끗한 해변을 탐험하세요">Explore hidden coastal caves and pristine beaches</p>
+                                <div class="activity-details">
+                                    <span>⏱️ 3-4 hours</span>
+                                    <span>👥 2-8 people</span>
+                                    <span>📍 Jeju Island</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="activity-card">
-                        <div class="activity-image">
-                            <img src="assets/images/atv.jpg" alt="ATV Adventures">
-                            <div class="activity-overlay">
-                                <h3 data-en="ATV Adventures" data-kr="ATV 모험">ATV Adventures</h3>
-                                <p data-en="Explore rugged terrain and scenic trails" data-kr="험준한 지형과 경치 좋은 트레일을 탐험하세요">Explore rugged terrain and scenic trails</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-image">
-                            <img src="assets/images/paintball.jpg" alt="Tactical Paintball">
-                            <div class="activity-overlay">
-                                <h3 data-en="Tactical Paintball" data-kr="택티컬 페인트볼">Tactical Paintball</h3>
-                                <p data-en="Strategic combat in natural settings" data-kr="자연 환경에서의 전략적 전투">Strategic combat in natural settings</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="activity-card">
-                        <div class="activity-image">
-                            <img src="assets/images/bungee.jpg" alt="Bungee Jumping">
-                            <div class="activity-overlay">
+                </div>
+
+                <!-- Extreme Sports -->
+                <div class="activity-card premium" data-category="extreme">
+                    <div class="activity-image">
+                        <img src="assets/images/bungee.jpg" alt="Bungee Jumping">
+                        <div class="activity-overlay">
+                            <div class="activity-info">
+                                <span class="activity-level extreme">Extreme</span>
                                 <h3 data-en="Bungee Jumping" data-kr="번지점프">Bungee Jumping</h3>
-                                <p data-en="Take the ultimate leap of faith" data-kr="궁극의 믿음의 도약을 해보세요">Take the ultimate leap of faith</p>
+                                <p data-en="Take the ultimate leap of faith from Korea's highest platforms" data-kr="한국 최고 높이 플랫폼에서 궁극의 믿음의 도약을 해보세요">Take the ultimate leap of faith from Korea's highest platforms</p>
+                                <div class="activity-details">
+                                    <span>⏱️ 2-3 hours</span>
+                                    <span>👥 1-4 people</span>
+                                    <span>📍 Multiple locations</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="premium-badge" data-en="Premium" data-kr="프리미엄">Premium</div>
+                    </div>
+                </div>
+
+                <div class="activity-card" data-category="extreme">
+                    <div class="activity-image">
+                        <img src="assets/images/skydiving.jpg" alt="Skydiving">
+                        <div class="activity-overlay">
+                            <div class="activity-info">
+                                <span class="activity-level extreme">Extreme</span>
+                                <h3 data-en="Tandem Skydiving" data-kr="탠덤 스카이다이빙">Tandem Skydiving</h3>
+                                <p data-en="Experience Korea from 15,000 feet with professional instructors" data-kr="전문 강사와 함께 15,000피트에서 한국을 경험하세요">Experience Korea from 15,000 feet with professional instructors</p>
+                                <div class="activity-details">
+                                    <span>⏱️ Half day</span>
+                                    <span>👥 1-2 people</span>
+                                    <span>📍 Gyeonggi-do</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adventure Activities -->
+                <div class="activity-card" data-category="adventure">
+                    <div class="activity-image">
+                        <img src="assets/images/atv.jpg" alt="ATV Adventures">
+                        <div class="activity-overlay">
+                            <div class="activity-info">
+                                <span class="activity-level moderate">Moderate</span>
+                                <h3 data-en="ATV Mountain Trails" data-kr="ATV 산악 트레일">ATV Mountain Trails</h3>
+                                <p data-en="Conquer rugged terrain and scenic mountain trails" data-kr="험준한 지형과 경치 좋은 산악 트레일을 정복하세요">Conquer rugged terrain and scenic mountain trails</p>
+                                <div class="activity-details">
+                                    <span>⏱️ 2-4 hours</span>
+                                    <span>👥 4-10 people</span>
+                                    <span>📍 Chuncheon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card" data-category="adventure extreme">
+                    <div class="activity-image">
+                        <img src="assets/images/paintball.jpg" alt="Tactical Paintball">
+                        <div class="activity-overlay">
+                            <div class="activity-info">
+                                <span class="activity-level moderate">Moderate</span>
+                                <h3 data-en="Tactical Paintball" data-kr="택티컬 페인트볼">Tactical Paintball</h3>
+                                <p data-en="Strategic combat scenarios in natural battlefield settings" data-kr="자연 전장 환경에서의 전략적 전투 시나리오">Strategic combat scenarios in natural battlefield settings</p>
+                                <div class="activity-details">
+                                    <span>⏱️ 3-5 hours</span>
+                                    <span>👥 8-20 people</span>
+                                    <span>📍 DMZ Area</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card" data-category="adventure">
+                    <div class="activity-image">
+                        <img src="assets/images/ziplining.jpg" alt="Forest Zip-lining">
+                        <div class="activity-overlay">
+                            <div class="activity-info">
+                                <span class="activity-level easy">Easy</span>
+                                <h3 data-en="Forest Zip-lining" data-kr="숲속 짚라인">Forest Zip-lining</h3>
+                                <p data-en="Soar through ancient forests on Korea's longest zip-lines" data-kr="한국에서 가장 긴 짚라인으로 고대 숲을 날아보세요">Soar through ancient forests on Korea's longest zip-lines</p>
+                                <div class="activity-details">
+                                    <span>⏱️ 2-3 hours</span>
+                                    <span>👥 6-15 people</span>
+                                    <span>📍 Seoraksan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card" data-category="adventure">
+                    <div class="activity-image">
+                        <img src="assets/images/rockclimbing.jpg" alt="Rock Climbing">
+                        <div class="activity-overlay">
+                            <div class="activity-info">
+                                <span class="activity-level moderate">Moderate</span>
+                                <h3 data-en="Rock Climbing" data-kr="암벽 등반">Rock Climbing</h3>
+                                <p data-en="Scale dramatic cliff faces with stunning valley views" data-kr="멋진 계곡 전망과 함께 극적인 절벽을 오르세요">Scale dramatic cliff faces with stunning valley views</p>
+                                <div class="activity-details">
+                                    <span>⏱️ 4-6 hours</span>
+                                    <span>👥 3-8 people</span>
+                                    <span>📍 Incheon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cultural Activities -->
+                <div class="activity-card" data-category="cultural">
+                    <div class="activity-image">
+                        <img src="assets/images/food.jpg" alt="Culinary Adventure">
+                        <div class="activity-overlay">
+                            <div class="activity-info">
+                                <span class="activity-level easy">Easy</span>
+                                <h3 data-en="Culinary Adventures" data-kr="요리 모험">Culinary Adventures</h3>
+                                <p data-en="Discover authentic Korean flavors with local masters" data-kr="현지 장인들과 함께 진정한 한국의 맛을 발견하세요">Discover authentic Korean flavors with local masters</p>
+                                <div class="activity-details">
+                                    <span>⏱️ 4-5 hours</span>
+                                    <span>👥 4-12 people</span>
+                                    <span>📍 Seoul & Busan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card" data-category="cultural">
+                    <div class="activity-image">
+                        <img src="assets/images/templestay.jpg" alt="Temple Stay">
+                        <div class="activity-overlay">
+                            <div class="activity-info">
+                                <span class="activity-level easy">Easy</span>
+                                <h3 data-en="Temple Stay Experience" data-kr="템플 스테이 체험">Temple Stay Experience</h3>
+                                <p data-en="Immerse yourself in Korean Buddhist culture and meditation" data-kr="한국 불교 문화와 명상에 몰입하세요">Immerse yourself in Korean Buddhist culture and meditation</p>
+                                <div class="activity-details">
+                                    <span>⏱️ 1-2 days</span>
+                                    <span>👥 5-20 people</span>
+                                    <span>📍 Various temples</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card premium" data-category="adventure">
+                    <div class="activity-image">
+                        <img src="assets/images/helicopter.jpg" alt="Helicopter Tours">
+                        <div class="activity-overlay">
+                            <div class="activity-info">
+                                <span class="activity-level easy">Easy</span>
+                                <h3 data-en="Helicopter Tours" data-kr="헬리콥터 투어">Helicopter Tours</h3>
+                                <p data-en="Breathtaking aerial views of Korea's most scenic landscapes" data-kr="한국의 가장 아름다운 풍경의 숨막히는 항공 전망">Breathtaking aerial views of Korea's most scenic landscapes</p>
+                                <div class="activity-details">
+                                    <span>⏱️ 1-2 hours</span>
+                                    <span>👥 2-6 people</span>
+                                    <span>📍 Nationwide</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="premium-badge" data-en="Premium" data-kr="프리미엄">Premium</div>
+                    </div>
+                </div>
+
+                <div class="activity-card" data-category="adventure water">
+                    <div class="activity-image">
+                        <img src="assets/images/surfing.jpg" alt="Surfing Lessons">
+                        <div class="activity-overlay">
+                            <div class="activity-info">
+                                <span class="activity-level moderate">Moderate</span>
+                                <h3 data-en="Surfing Lessons" data-kr="서핑 레슨">Surfing Lessons</h3>
+                                <p data-en="Ride the waves on Korea's beautiful east coast beaches" data-kr="한국 동해안의 아름다운 해변에서 파도를 타보세요">Ride the waves on Korea's beautiful east coast beaches</p>
+                                <div class="activity-details">
+                                    <span>⏱️ 3-4 hours</span>
+                                    <span>👥 4-10 people</span>
+                                    <span>📍 Yangyang</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Values Section -->
-        <section class="values-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-en="Why Choose WinK?" data-kr="왜 WinK를 선택해야 할까요?">Why Choose WinK?</h2>
-                    <div class="accent-line"></div>
-                </div>
-                <div class="values-grid">
-                    <div class="value-card">
+    <!-- 3D Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="The WinK Experience" data-kr="WinK 경험">The WinK Experience</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="values-3d">
+                <div class="value-card-3d">
+                    <div class="card-face card-front">
                         <div class="value-icon">🛡️</div>
                         <h3 data-en="Safety First" data-kr="안전 우선">Safety First</h3>
-                        <p data-en="Professional guides and top-tier safety equipment ensure your adventure is thrilling yet secure." data-kr="전문 가이드와 최고급 안전 장비로 스릴 있지만 안전한 모험을 보장합니다.">Professional guides and top-tier safety equipment ensure your adventure is thrilling yet secure.</p>
                     </div>
-                    <div class="value-card">
+                    <div class="card-face card-back">
+                        <p data-en="Professional guides and cutting-edge safety equipment ensure every adventure is thrilling yet secure. We maintain the highest international safety standards." data-kr="전문 가이드와 최첨단 안전 장비로 모든 모험이 스릴 있지만 안전하도록 보장합니다. 최고의 국제 안전 기준을 유지합니다.">Professional guides and cutting-edge safety equipment ensure every adventure is thrilling yet secure. We maintain the highest international safety standards.</p>
+                    </div>
+                </div>
+                <div class="value-card-3d">
+                    <div class="card-face card-front">
                         <div class="value-icon">🌟</div>
-                        <h3 data-en="Authentic Experiences" data-kr="진정한 경험">Authentic Experiences</h3>
-                        <p data-en="We showcase the real Korea - from hidden natural gems to local cultural experiences." data-kr="숨겨진 자연의 보석부터 현지 문화 체험까지 진짜 한국을 보여드립니다.">We showcase the real Korea - from hidden natural gems to local cultural experiences.</p>
+                        <h3 data-en="Authentic Korea" data-kr="진정한 한국">Authentic Korea</h3>
                     </div>
-                    <div class="value-card">
-                        <div class="value-icon">🤝</div>
-                        <h3 data-en="Expert Guidance" data-kr="전문가 가이드">Expert Guidance</h3>
-                        <p data-en="Our local experts know every trail, rapid, and adventure spot to make your experience unforgettable." data-kr="현지 전문가들이 모든 트레일, 급류, 모험 장소를 알고 있어 잊을 수 없는 경험을 만들어드립니다.">Our local experts know every trail, rapid, and adventure spot to make your experience unforgettable.</p>
+                    <div class="card-face card-back">
+                        <p data-en="Experience the real Korea through hidden gems, local traditions, and insider access to places others can't reach. Every tour tells a unique story." data-kr="숨겨진 보석, 현지 전통, 그리고 다른 사람들이 갈 수 없는 곳에 대한 내부자 접근을 통해 진짜 한국을 경험하세요. 모든 투어는 독특한 이야기를 들려줍니다.">Experience the real Korea through hidden gems, local traditions, and insider access to places others can't reach. Every tour tells a unique story.</p>
+                    </div>
+                </div>
+                <div class="value-card-3d">
+                    <div class="card-face card-front">
+                        <div class="value-icon">🚀</div>
+                        <h3 data-en="Innovation" data-kr="혁신">Innovation</h3>
+                    </div>
+                    <div class="card-face card-back">
+                        <p data-en="We constantly push boundaries with new technologies, unique experiences, and pioneering adventure concepts that redefine Korean tourism." data-kr="새로운 기술, 독특한 경험, 그리고 한국 관광을 재정의하는 선구적인 모험 컨셉으로 지속적으로 경계를 넓혀가고 있습니다.">We constantly push boundaries with new technologies, unique experiences, and pioneering adventure concepts that redefine Korean tourism.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2 data-en="Ready for Your Korean Adventure?" data-kr="한국 모험을 준비하셨나요?">Ready for Your Korean Adventure?</h2>
-                    <p data-en="Join us for an unforgettable journey through Korea's most exciting adventures." data-kr="한국의 가장 흥미진진한 모험을 통한 잊을 수 없는 여행에 함께하세요.">Join us for an unforgettable journey through Korea's most exciting adventures.</p>
-                    <div class="cta-buttons">
-                        <a href="#" class="btn btn-primary" data-en="Register Now" data-kr="지금 등록하기">Register Now</a>
-                        <a href="#" class="btn btn-secondary" data-en="View Activities" data-kr="활동 보기">View Activities</a>
+    <!-- Testimonials Carousel -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="What Adventurers Say" data-kr="모험가들이 말하는 것">What Adventurers Say</h2>
+                <div class="accent-line"></div>
+            </div>
+            <div class="testimonials-carousel">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p data-en="An absolutely incredible experience! The rafting was intense and the guides were amazing. WinK showed me a side of Korea I never knew existed." data-kr="정말 놀라운 경험이었습니다! 래프팅은 강렬했고 가이드들은 훌륭했습니다. WinK는 제가 몰랐던 한국의 면을 보여주었습니다.">"An absolutely incredible experience! The rafting was intense and the guides were amazing. WinK showed me a side of Korea I never knew existed."</p>
+                        <div class="testimonial-author">
+                            <img src="assets/images/testimonial1.jpg" alt="Sarah Johnson">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <span>Adventure Enthusiast, USA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p data-en="Professional, safe, and absolutely thrilling! The bungee jump was a dream come true and the helicopter tour gave us breathtaking views." data-kr="전문적이고 안전하며 절대적으로 스릴 넘칩니다! 번지점프는 꿈이 실현된 것 같았고 헬리콥터 투어는 숨막히는 전경을 제공했습니다.">"Professional, safe, and absolutely thrilling! The bungee jump was a dream come true and the helicopter tour gave us breathtaking views."</p>
+                        <div class="testimonial-author">
+                            <img src="assets/images/testimonial2.jpg" alt="Mike Chen">
+                            <div>
+                                <h4>Mike Chen</h4>
+                                <span>Travel Blogger, Canada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p data-en="WinK exceeded all expectations. The cultural experiences combined with adventure activities created the perfect Korean getaway." data-kr="WinK는 모든 기대를 뛰어넘었습니다. 문화 체험과 모험 활동이 결합되어 완벽한 한국 휴가를 만들어냈습니다.">"WinK exceeded all expectations. The cultural experiences combined with adventure activities created the perfect Korean getaway."</p>
+                        <div class="testimonial-author">
+                            <img src="assets/images/testimonial3.jpg" alt="Emma Wilson">
+                            <div>
+                                <h4>Emma Wilson</h4>
+                                <span>Travel Photographer, UK</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev">‹</button>
+                <div class="carousel-dots"></div>
+                <button class="carousel-btn next">›</button>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
+    <!-- Interactive Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-en="Adventure Locations" data-kr="모험 장소들">Adventure Locations</h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle" data-en="Explore our activity locations across Korea" data-kr="한국 전역의 활동 장소를 탐험해보세요">Explore our activity locations across Korea</p>
+            </div>
+            <div class="interactive-map">
+                <div class="map-container">
+                    <div class="korea-map">
+                        <div class="map-pin" data-location="seoul" style="top: 35%; left: 50%;">
+                            <div class="pin-dot"></div>
+                            <div class="pin-popup">
+                                <h4>Seoul</h4>
+                                <p data-en="Cultural Tours, Food Adventures" data-kr="문화 투어, 음식 모험">Cultural Tours, Food Adventures</p>
+                            </div>
+                        </div>
+                        <div class="map-pin" data-location="gangwon" style="top: 25%; left: 65%;">
+                            <div class="pin-dot"></div>
+                            <div class="pin-popup">
+                                <h4>Gangwon-do</h4>
+                                <p data-en="Rafting, Skiing, Mountain Adventures" data-kr="래프팅, 스키, 산악 모험">Rafting, Skiing, Mountain Adventures</p>
+                            </div>
+                        </div>
+                        <div class="map-pin" data-location="jeju" style="top: 85%; left: 25%;">
+                            <div class="pin-dot"></div>
+                            <div class="pin-popup">
+                                <h4>Jeju Island</h4>
+                                <p data-en="Diving, Kayaking, Volcanic Tours" data-kr="다이빙, 카약, 화산 투어">Diving, Kayaking, Volcanic Tours</p>
+                            </div>
+                        </div>
+                        <div class="map-pin" data-location="busan" style="top: 70%; left: 75%;">
+                            <div class="pin-dot"></div>
+                            <div class="pin-popup">
+                                <h4>Busan</h4>
+                                <p data-en="Surfing, Coastal Adventures" data-kr="서핑, 해안 모험">Surfing, Coastal Adventures</p>
+                            </div>
+                        </div>
+                        <div class="map-pin" data-location="dmz" style="top: 15%; left: 55%;">
+                            <div class="pin-dot"></div>
+                            <div class="pin-popup">
+                                <h4>DMZ Area</h4>
+                                <p data-en="Tactical Paintball, Historical Tours" data-kr="택티컬 페인트볼, 역사 투어">Tactical Paintball, Historical Tours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-details">
+                    <div class="location-card active" data-location="seoul">
+                        <h3>Seoul Metropolitan</h3>
+                        <div class="location-activities">
+                            <span class="activity-tag">Cultural Tours</span>
+                            <span class="activity-tag">Food Adventures</span>
+                            <span class="activity-tag">Urban Exploration</span>
+                        </div>
+                        <p data-en="Discover Korea's vibrant capital through unique cultural experiences and culinary adventures." data-kr="독특한 문화 체험과 요리 모험을 통해 한국의 활기찬 수도를 발견하세요.">Discover Korea's vibrant capital through unique cultural experiences and culinary adventures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium CTA Section -->
+    <section class="premium-cta">
+        <div class="cta-background">
+            <video autoplay muted loop>
+                <source src="assets/videos/adventure-montage.mp4" type="video/mp4">
+            </video>
+            <div class="cta-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-badge" data-en="Limited Time Offer" data-kr="한정 시간 제안">Limited Time Offer</div>
+                <h2 data-en="Ready for Your Korean Adventure?" data-kr="한국 모험을 준비하셨나요?">Ready for Your Korean Adventure?</h2>
+                <p data-en="Join thousands of adventurers who have discovered the real Korea with WinK" data-kr="WinK와 함께 진짜 한국을 발견한 수천 명의 모험가들에 합류하세요">Join thousands of adventurers who have discovered the real Korea with WinK</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary pulse" data-en="Start Your Adventure" data-kr="모험 시작하기">Start Your Adventure</a>
+                    <a href="#" class="btn btn-secondary" data-en="View All Activities" data-kr="모든 활동 보기">View All Activities</a>
+                </div>
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span class="trust-icon">🏆</span>
+                        <span data-en="Award Winning" data-kr="수상 경력">Award Winning</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">🛡️</span>
+                        <span data-en="Fully Insured" data-kr="완전 보험">Fully Insured</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">⭐</span>
+                        <span data-en="5-Star Rated" data-kr="5성급 평점">5-Star Rated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
     <footer class="footer">
+        <div class="footer-waves">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,120 C150,60 350,60 500,120 C650,180 850,180 1000,120 C1150,60 1200,60 1200,120 L1200,0 L0,0 Z" fill="currentColor"></path>
+            </svg>
+        </div>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -167,27 +604,95 @@
                         <img src="assets/images/winklogo.png" alt="WinK Logo">
                         <span>When in Korea</span>
                     </div>
-                    <p data-en="Adventure awaits in the Land of the Morning Calm" data-kr="고요한 아침의 나라에서 모험이 기다립니다">Adventure awaits in the Land of the Morning Calm</p>
-                </div>
-                <div class="footer-section">
-                    <h4 data-en="Contact" data-kr="연락처">Contact</h4>
-                    <p>Email: info@wheninkore.com</p>
-                    <p>Phone: +82-10-XXXX-XXXX</p>
-                </div>
-                <div class="footer-section">
-                    <h4 data-en="Follow Us" data-kr="팔로우하기">Follow Us</h4>
+                    <p data-en="Creating unforgettable adventures in the Land of the Morning Calm since 2020" data-kr="2020년부터 고요한 아침의 나라에서 잊을 수 없는 모험을 만들어가고 있습니다">Creating unforgettable adventures in the Land of the Morning Calm since 2020</p>
                     <div class="social-links">
-                        <a href="#">Instagram</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">YouTube</a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-kr="빠른 링크">Quick Links</h4>
+                    <ul>
+                        <li><a href="#" data-en="All Activities" data-kr="모든 활동">All Activities</a></li>
+                        <li><a href="#" data-en="Book Now" data-kr="지금 예약">Book Now</a></li>
+                        <li><a href="#" data-en="Gift Vouchers" data-kr="기프트 바우처">Gift Vouchers</a></li>
+                        <li><a href="#" data-en="Group Bookings" data-kr="그룹 예약">Group Bookings</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Support" data-kr="지원">Support</h4>
+                    <ul>
+                        <li><a href="#" data-en="Safety Guidelines" data-kr="안전 가이드라인">Safety Guidelines</a></li>
+                        <li><a href="#" data-en="FAQ" data-kr="자주 묻는 질문">FAQ</a></li>
+                        <li><a href="#" data-en="Contact Us" data-kr="문의하기">Contact Us</a></li>
+                        <li><a href="#" data-en="Reviews" data-kr="리뷰">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-en="Contact Info" data-kr="연락처 정보">Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>adventure@winkkorea.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span>+82-10-WINK-ADV</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span data-en="Seoul, South Korea" data-kr="대한민국 서울">Seoul, South Korea</span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-en="© 2025 When in Korea (WinK). All rights reserved." data-kr="© 2025 When in Korea (WinK). 모든 권리 보유.">© 2025 When in Korea (WinK). All rights reserved.</p>
+                <div class="footer-bottom-content">
+                    <p data-en="© 2025 When in Korea (WinK). All rights reserved." data-kr="© 2025 When in Korea (WinK). 모든 권리 보유.">© 2025 When in Korea (WinK). All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#" data-en="Privacy Policy" data-kr="개인정보 처리방침">Privacy Policy</a>
+                        <a href="#" data-en="Terms of Service" data-kr="서비스 약관">Terms of Service</a>
+                        <a href="#" data-en="Cookie Policy" data-kr="쿠키 정책">Cookie Policy</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Floating Action Button -->
+    <div class="floating-actions">
+        <button class="fab main-fab">
+            <span class="fab-icon">💬</span>
+        </button>
+        <div class="fab-menu">
+            <button class="fab" data-action="chat">
+                <span class="fab-icon">💬</span>
+                <span class="fab-label" data-en="Live Chat" data-kr="실시간 채팅">Live Chat</span>
+            </button>
+            <button class="fab" data-action="call">
+                <span class="fab-icon">📞</span>
+                <span class="fab-label" data-en="Call Us" data-kr="전화하기">Call Us</span>
+            </button>
+            <button class="fab" data-action="whatsapp">
+                <span class="fab-icon">📱</span>
+                <span class="fab-label" data-en="WhatsApp" data-kr="왓츠앱">WhatsApp</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top">
+        <svg viewBox="0 0 24 24">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </button>
 
     <script src="assets/js/scripts.js"></script>
 </body>
