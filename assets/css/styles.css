@@ -139,15 +139,17 @@ nav {
 
 /* Content Layout */
 .content {
-    display: grid; /* Changed to CSS Grid */
-    grid-template-columns: 280px 1fr; /* Define two columns: sidebar fixed at 280px, main content takes the rest */
+    display: flex; /* Use flexbox for the main layout */
+    flex-direction: row; /* Arrange items in a row */
     min-height: 600px; /* Keep min-height for overall content area */
+    align-items: flex-start; /* Align items to the start of the cross axis (top) */
 }
 
 /* Sidebar Styles */
 .sidebar {
-    /* No need for flex-related properties here anymore, as it's a grid item */
-    width: auto; /* Let grid control the width */
+    width: 280px; /* Fixed width for the sidebar */
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+    flex-grow: 0; /* Prevent sidebar from growing */
     background: linear-gradient(180deg, #f8f9fa, #e9ecef);
     border-right: 1px solid #dee2e6;
     padding: 2rem 0;
@@ -204,7 +206,7 @@ nav {
 
 /* Main Content Styles */
 .main-content {
-    /* No need for flex-related properties here anymore, as it's a grid item */
+    flex: 1; /* Allow main content to grow and take available space */
     padding: 2.5rem;
     background: #e0f2f7; /* A light blue color */
     overflow-y: auto;
@@ -607,9 +609,8 @@ nav {
     }
 
     .content {
-        /* Revert to flex column on smaller screens for mobile sidebar scrolling */
-        display: flex; /* Ensure display is flex */
-        flex-direction: column; /* Stack them */
+        /* On smaller screens, stack them vertically */
+        flex-direction: column; 
     }
 
     .sidebar {
