@@ -139,17 +139,15 @@ nav {
 
 /* Content Layout */
 .content {
-    display: flex;
-    min-height: 600px;
-    flex-direction: row; /* Ensure sidebar and main content are side by side */
+    display: grid; /* Changed to CSS Grid */
+    grid-template-columns: 280px 1fr; /* Define two columns: sidebar fixed at 280px, main content takes the rest */
+    min-height: 600px; /* Keep min-height for overall content area */
 }
 
 /* Sidebar Styles */
 .sidebar {
-    width: 280px; /* Keep the fixed width */
-    flex-grow: 0; /* Don't allow it to grow */
-    flex-shrink: 0; /* Prevent it from shrinking */
-    flex-basis: 280px; /* Explicitly set its base size */
+    /* No need for flex-related properties here anymore, as it's a grid item */
+    width: auto; /* Let grid control the width */
     background: linear-gradient(180deg, #f8f9fa, #e9ecef);
     border-right: 1px solid #dee2e6;
     padding: 2rem 0;
@@ -206,9 +204,7 @@ nav {
 
 /* Main Content Styles */
 .main-content {
-    flex-grow: 1;   /* Allow it to grow and fill available space */
-    flex-shrink: 1;   /* Allow it to shrink if necessary */
-    flex-basis: auto; /* Its preferred size is its content size */
+    /* No need for flex-related properties here anymore, as it's a grid item */
     padding: 2.5rem;
     background: #e0f2f7; /* A light blue color */
     overflow-y: auto;
@@ -611,15 +607,18 @@ nav {
     }
 
     .content {
-        flex-direction: column;
+        /* Revert to flex column on smaller screens for mobile sidebar scrolling */
+        display: flex; /* Ensure display is flex */
+        flex-direction: column; /* Stack them */
     }
 
     .sidebar {
-        width: 100%;
-        display: flex;
+        width: 100%; /* Sidebar takes full width when stacked */
+        display: flex; /* Maintain flex for horizontal scrolling sidebar tabs */
         overflow-x: auto;
         padding: 1rem 0;
         background: linear-gradient(90deg, #f8f9fa, #e9ecef);
+        border-right: none; /* Remove border when stacked */
     }
 
     .sidebar-tab {
