@@ -3,27 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2025 Summer Rafting Trip - WinK Korean Adventure</title>
-    <meta name="description" content="Join WinK for an unforgettable adventure trip in Korea featuring rafting, paintball, ATV rides, bungee jumping and more!">
-    <meta name="keywords" content="Korea adventure, rafting Korea, WinK, paintball, ATV, bungee jumping, 2025 Summer Rafting Trip">
+    <title>WinK - 2025 Summer Rafting Trip | Korean Adventure Experience</title>
+    <meta name="description" content="Join WinK for an unforgettable 2025 summer adventure trip in Korea featuring rafting, paintball, ATV rides, bungee jumping and more!">
+    <meta name="keywords" content="Korea adventure, rafting Korea, WinK, paintball, ATV, bungee jumping, summer 2025">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
     <div class="container">
+        <!-- Header Section -->
         <header>
             <div class="header-content">
-                <img src="assets/images/winklogo.png" alt="WinK Logo" class="logo-img">
+                <div class="logo-section">
+                    <img src="assets/images/winklogo.png" alt="WinK Logo" class="logo-img">
+                    <div class="header-title">
+                        <h1>
+                            <span class="en">2025 Summer Rafting Trip</span>
+                            <span class="ko hidden">2025 여름 래프팅 여행</span>
+                        </h1>
+                        <div class="subtitle">
+                            <span class="en">When in Korea Adventure Experience</span>
+                            <span class="ko hidden">When in Korea 어드벤처 경험</span>
+                        </div>
+                    </div>
+                </div>
                 <button class="lang-toggle" onclick="toggleLanguage()">
                     <span id="lang-btn-text">한국어</span>
                 </button>
             </div>
-            <h1>2025 Summer Rafting Trip</h1>
         </header>
 
+        <!-- Navigation Section -->
         <nav>
+            <button class="mobile-menu-toggle">☰</button>
             <div class="nav-tabs">
                 <button class="nav-tab active" onclick="showSection('trip-info')">
-                    <span class="en">Trip Info</span>
+                    <span class="en">Trip Information</span>
                     <span class="ko hidden">여행 정보</span>
                 </button>
                 <button class="nav-tab" onclick="showSection('about')">
@@ -31,380 +47,440 @@
                     <span class="ko hidden">WinK 소개</span>
                 </button>
                 <button class="nav-tab" onclick="showSection('register')">
-                    <span class="en">Register</span>
-                    <span class="ko hidden">신청하기</span>
+                    <span class="en">Register Now</span>
+                    <span class="ko hidden">지금 신청하기</span>
                 </button>
             </div>
         </nav>
 
+        <!-- Main Content Area -->
         <div class="content">
+            <!-- Trip Info Section -->
             <div id="trip-info" class="main-section">
+                <!-- Sidebar with Vertical Tabs -->
                 <div class="sidebar">
                     <button class="sidebar-tab active" onclick="showTripTab('introduction')">
-                        <span class="en">Introduction</span>
-                        <span class="ko hidden">소개</span>
+                        <span class="en">🌟 Introduction</span>
+                        <span class="ko hidden">🌟 소개</span>
                     </button>
                     <button class="sidebar-tab" onclick="showTripTab('rafting')">
-                        <span class="en">Rafting</span>
-                        <span class="ko hidden">래프팅</span>
+                        <span class="en">🚣 Rafting</span>
+                        <span class="ko hidden">🚣 래프팅</span>
                     </button>
                     <button class="sidebar-tab" onclick="showTripTab('paintball')">
-                        <span class="en">Paintball</span>
-                        <span class="ko hidden">페인트볼</span>
+                        <span class="en">🎯 Paintball</span>
+                        <span class="ko hidden">🎯 페인트볼</span>
                     </button>
                     <button class="sidebar-tab" onclick="showTripTab('atv')">
-                        <span class="en">ATV / Fourwheeling</span>
-                        <span class="ko hidden">ATV / 사륜구동</span>
+                        <span class="en">🏍️ ATV Adventure</span>
+                        <span class="ko hidden">🏍️ ATV 어드벤처</span>
                     </button>
                     <button class="sidebar-tab" onclick="showTripTab('bungee')">
-                        <span class="en">Bungee Jumping</span>
-                        <span class="ko hidden">번지점프</span>
+                        <span class="en">🪂 Bungee Jump</span>
+                        <span class="ko hidden">🪂 번지점프</span>
                     </button>
                     <button class="sidebar-tab" onclick="showTripTab('food')">
-                        <span class="en">Food and Lodging</span>
-                        <span class="ko hidden">식사 및 숙박</span>
+                        <span class="en">🍽️ Food & Stay</span>
+                        <span class="ko hidden">🍽️ 식사 및 숙박</span>
                     </button>
                     <button class="sidebar-tab" onclick="showTripTab('transportation')">
-                        <span class="en">Transportation</span>
-                        <span class="ko hidden">교통편</span>
+                        <span class="en">🚌 Transportation</span>
+                        <span class="ko hidden">🚌 교통편</span>
                     </button>
                     <button class="sidebar-tab" onclick="showTripTab('faq')">
-                        <span class="en">FAQ</span>
-                        <span class="ko hidden">자주 묻는 질문</span>
+                        <span class="en">❓ FAQ</span>
+                        <span class="ko hidden">❓ 자주 묻는 질문</span>
                     </button>
                 </div>
 
+                <!-- Main Content Area -->
                 <div class="main-content">
-                    <div id="introduction" class="tab-content active">
+                    <!-- Introduction Tab -->
+                    <div id="introduction" class="tab-content active animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
-                                <h2>Welcome to WinK Adventure Trip</h2>
+                                <h1>Welcome to WinK's Ultimate Adventure</h1>
                                 <img src="assets/images/intro.jpg" alt="WinK Adventure Trip Overview">
-                                <p>Get ready for the ultimate Korean adventure experience! WinK (When in Korea) brings you an action-packed weekend filled with thrilling activities, delicious food, and unforgettable memories.</p>
+                                <p>Get ready for the ultimate Korean adventure experience! WinK (When in Korea) brings you an action-packed summer weekend filled with thrilling activities, authentic Korean cuisine, and unforgettable memories in Korea's stunning natural landscapes.</p>
                                 
                                 <div class="highlight-box">
-                                    <h4>Trip Highlights</h4>
-                                    <p>Experience the best of Korean adventure tourism with our carefully curated activities designed for maximum fun and safety.</p>
+                                    <h4>🎯 2025 Summer Trip Highlights</h4>
+                                    <p><strong>Dates:</strong> June - August 2025 (Multiple weekends available)<br>
+                                    <strong>Duration:</strong> 2 Days, 1 Night<br>
+                                    <strong>Price:</strong> ₩280,000 per person (All-inclusive)<br>
+                                    <strong>Group Size:</strong> Limited to 20 adventurers per trip</p>
                                 </div>
 
-                                <h3>What Makes This Trip Special</h3>
-                                <p>Our adventure trip combines Korea's most exciting outdoor activities in one incredible weekend. From heart-pumping rafting through scenic valleys to strategic paintball battles, every moment is designed to create lasting memories.</p>
+                                <h3>What Makes This Summer Trip Special</h3>
+                                <p>Our 2025 summer adventure combines Korea's most exciting outdoor activities in one incredible weekend. From heart-pumping white water rafting through pristine mountain valleys to strategic paintball battles in forest arenas, every moment is designed to create lasting memories while showcasing Korea's natural beauty.</p>
 
                                 <div class="activity-grid">
                                     <div class="activity-card">
-                                        <h4>Adventure Activities</h4>
-                                        <p>Rafting, paintball, ATV rides, and bungee jumping - all in one amazing weekend.</p>
+                                        <h4>🏞️ Premium Adventures</h4>
+                                        <p>White water rafting, tactical paintball, mountain ATV rides, and heart-stopping bungee jumping - all in one epic weekend.</p>
                                     </div>
                                     <div class="activity-card">
-                                        <h4>All-Inclusive Package</h4>
-                                        <p>Transportation, meals, accommodation, and equipment all included in one price.</p>
+                                        <h4>🎒 All-Inclusive Package</h4>
+                                        <p>Luxury transportation, gourmet Korean meals, mountain lodge accommodation, and all safety equipment included.</p>
                                     </div>
                                     <div class="activity-card">
-                                        <h4>Safety First</h4>
-                                        <p>Professional guides and top-quality safety equipment for all activities.</p>
+                                        <h4>🛡️ Safety Excellence</h4>
+                                        <p>International-certified guides, premium safety equipment, and comprehensive insurance coverage for peace of mind.</p>
                                     </div>
                                     <div class="activity-card">
-                                        <h4>Cultural Experience</h4>
-                                        <p>Enjoy authentic Korean cuisine and experience local hospitality.</p>
+                                        <h4>🇰🇷 Cultural Immersion</h4>
+                                        <p>Authentic Korean BBQ experiences, traditional mountain lodge stay, and local cultural insights from expert guides.</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="ko hidden">
-                                <h2>WinK 어드벤처 여행에 오신 것을 환영합니다</h2>
+                                <h1>WinK의 궁극적인 모험에 오신 것을 환영합니다</h1>
                                 <img src="assets/images/intro.jpg" alt="WinK 어드벤처 여행 개요">
-                                <p>최고의 한국 모험 경험을 준비하세요! WinK (When in Korea)는 스릴 넘치는 액티비티, 맛있는 음식, 그리고 잊을 수 없는 추억으로 가득한 액션 패키지 주말을 선사합니다.</p>
+                                <p>최고의 한국 모험 경험을 준비하세요! WinK (When in Korea)는 스릴 넘치는 액티비티, 정통 한국 요리, 그리고 한국의 아름다운 자연 경관에서의 잊을 수 없는 추억으로 가득한 액션 패키지 여름 주말을 선사합니다.</p>
                                 
                                 <div class="highlight-box">
-                                    <h4>여행 하이라이트</h4>
-                                    <p>최대한의 재미와 안전을 위해 신중하게 선별된 액티비티로 한국 어드벤처 관광의 최고를 경험하세요.</p>
+                                    <h4>🎯 2025 여름 여행 하이라이트</h4>
+                                    <p><strong>날짜:</strong> 2025년 6월 - 8월 (다양한 주말 선택 가능)<br>
+                                    <strong>기간:</strong> 1박 2일<br>
+                                    <strong>가격:</strong> 1인당 ₩280,000 (모든 것 포함)<br>
+                                    <strong>그룹 크기:</strong> 여행당 20명의 모험가로 제한</p>
                                 </div>
 
-                                <h3>이 여행을 특별하게 만드는 것</h3>
-                                <p>우리의 어드벤처 여행은 한국에서 가장 흥미진진한 야외 액티비티들을 하나의 놀라운 주말에 결합했습니다. 경치 좋은 계곡을 통한 심장 뛰는 래프팅부터 전략적인 페인트볼 전투까지, 모든 순간이 지속적인 추억을 만들도록 설계되었습니다.</p>
+                                <h3>이 여름 여행을 특별하게 만드는 것</h3>
+                                <p>우리의 2025년 여름 어드벤처는 한국에서 가장 흥미진진한 야외 액티비티들을 하나의 놀라운 주말에 결합했습니다. 깨끗한 산골짜기를 통한 심장 뛰는 화이트 워터 래프팅부터 숲 경기장에서의 전략적인 페인트볼 전투까지, 모든 순간이 한국의 자연미를 보여주면서 지속적인 추억을 만들도록 설계되었습니다.</p>
 
                                 <div class="activity-grid">
                                     <div class="activity-card">
-                                        <h4>어드벤처 액티비티</h4>
-                                        <p>래프팅, 페인트볼, ATV 라이딩, 번지점프 - 모두 하나의 놀라운 주말에.</p>
+                                        <h4>🏞️ 프리미엄 어드벤처</h4>
+                                        <p>화이트 워터 래프팅, 전술 페인트볼, 산악 ATV 라이딩, 심장 멈추는 번지점프 - 모두 하나의 서사적인 주말에.</p>
                                     </div>
                                     <div class="activity-card">
-                                        <h4>올 인클루시브 패키지</h4>
-                                        <p>교통편, 식사, 숙박, 장비 모두 하나의 가격에 포함.</p>
+                                        <h4>🎒 올 인클루시브 패키지</h4>
+                                        <p>럭셔리 교통편, 미식 한국 식사, 산장 숙박, 모든 안전 장비 포함.</p>
                                     </div>
                                     <div class="activity-card">
-                                        <h4>안전 최우선</h4>
-                                        <p>모든 액티비티에 대한 전문 가이드와 최고급 안전 장비.</p>
+                                        <h4>🛡️ 안전 우수성</h4>
+                                        <p>국제 인증 가이드, 프리미엄 안전 장비, 마음의 평화를 위한 종합 보험 적용.</p>
                                     </div>
                                     <div class="activity-card">
-                                        <h4>문화 체험</h4>
-                                        <p>정통 한국 요리를 즐기고 현지 환대를 경험하세요.</p>
+                                        <h4>🇰🇷 문화 몰입</h4>
+                                        <p>정통 한국 BBQ 경험, 전통 산장 숙박, 전문 가이드의 현지 문화 통찰.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div id="rafting" class="tab-content">
+                    <!-- Rafting Tab -->
+                    <div id="rafting" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
-                                <h2>White Water Rafting Adventure</h2>
+                                <h2>🚣 Premium White Water Rafting</h2>
                                 <img src="assets/images/rafting.jpg" alt="White Water Rafting on Korean Rivers">
-                                <p>Experience the thrill of navigating Korea's pristine mountain rivers with our professional rafting guides. Our rafting adventure takes place on the stunning Hantan River, known for its crystal-clear waters and exciting rapids.</p>
+                                <p>Experience the adrenaline rush of navigating Korea's pristine mountain rivers with our internationally certified rafting guides. Our summer rafting adventure takes place on the stunning Hantan River, renowned for its crystal-clear glacial waters and perfectly graded rapids.</p>
 
                                 <div class="highlight-box">
-                                    <h4>Rafting Details</h4>
-                                    <p><strong>Duration:</strong> 3-4 hours including safety briefing<br>
-                                    <strong>Difficulty:</strong> Beginner to Intermediate (Class II-III rapids)<br>
-                                    <strong>Group Size:</strong> 6-8 people per raft</p>
+                                    <h4>🌊 Rafting Experience Details</h4>
+                                    <p><strong>Duration:</strong> 4 hours including comprehensive safety briefing<br>
+                                    <strong>Difficulty:</strong> Class II-III rapids (Perfect for beginners to intermediates)<br>
+                                    <strong>Group Size:</strong> 6-8 adventurers per professional-grade raft<br>
+                                    <strong>Season:</strong> June-August (Optimal water levels and weather)</p>
                                 </div>
 
-                                <h3>What to Expect</h3>
-                                <p>Your rafting adventure begins with a comprehensive safety briefing and equipment fitting. Our certified guides will teach you proper paddling techniques and safety procedures before we hit the water.</p>
+                                <h3>🏔️ The Hantan River Experience</h3>
+                                <p>Your rafting journey begins with a comprehensive safety briefing from our internationally certified guides. Learn proper paddling techniques, safety procedures, and river navigation before embarking on your aquatic adventure through some of Korea's most spectacular scenery.</p>
 
-                                <p>The Hantan River offers a perfect mix of thrilling rapids and calm sections where you can enjoy the breathtaking mountain scenery. Keep your eyes open for local wildlife including herons, kingfishers, and if you're lucky, Korean otters!</p>
+                                <p>The Hantan River offers the perfect combination of thrilling Class II-III rapids and serene floating sections where you can admire the breathtaking mountain vistas. During calmer moments, keep your eyes peeled for native wildlife including Korean water deer, mountain hawks, and the occasional river otter family!</p>
 
-                                <h3>Safety Equipment Provided</h3>
-                                <p>All safety equipment is included: life jackets, helmets, paddles, and wetsuits (seasonal). Our rafts are regularly inspected and maintained to international safety standards.</p>
+                                <h3>🛡️ Premium Safety & Equipment</h3>
+                                <p>Your safety is our top priority. All participants receive professional-grade equipment including impact-rated helmets, Coast Guard approved life jackets, thermal wetsuits (temperature dependent), and carbon fiber paddles. Our rafts undergo daily safety inspections and meet international whitewater safety standards.</p>
                             </div>
 
                             <div class="ko hidden">
-                                <h2>화이트 워터 래프팅 어드벤처</h2>
+                                <h2>🚣 프리미엄 화이트 워터 래프팅</h2>
                                 <img src="assets/images/rafting.jpg" alt="한국 강에서의 화이트 워터 래프팅">
-                                <p>전문 래프팅 가이드와 함께 한국의 깨끗한 산악 강을 항해하는 스릴을 경험하세요. 우리의 래프팅 어드벤처는 맑은 물과 흥미진진한 급류로 유명한 아름다운 한탄강에서 진행됩니다.</p>
+                                <p>국제 인증 래프팅 가이드와 함께 한국의 깨끗한 산악 강을 항해하는 아드레날린 러시를 경험하세요. 우리의 여름 래프팅 어드벤처는 수정같이 맑은 빙하수와 완벽하게 등급화된 급류로 유명한 아름다운 한탄강에서 진행됩니다.</p>
 
                                 <div class="highlight-box">
-                                    <h4>래프팅 세부사항</h4>
-                                    <p><strong>소요시간:</strong> 안전 브리핑 포함 3-4시간<br>
-                                    <strong>난이도:</strong> 초급자부터 중급자 (Class II-III 급류)<br>
-                                    <strong>그룹 크기:</strong> 래프트당 6-8명</p>
+                                    <h4>🌊 래프팅 경험 세부사항</h4>
+                                    <p><strong>소요시간:</strong> 종합적인 안전 브리핑 포함 4시간<br>
+                                    <strong>난이도:</strong> Class II-III 급류 (초급자부터 중급자까지 완벽)<br>
+                                    <strong>그룹 크기:</strong> 전문급 래프트당 6-8명의 모험가<br>
+                                    <strong>시즌:</strong> 6월-8월 (최적의 수위 및 날씨)</p>
                                 </div>
 
-                                <h3>기대할 수 있는 것</h3>
-                                <p>래프팅 어드벤처는 종합적인 안전 브리핑과 장비 착용으로 시작됩니다. 인증받은 가이드들이 물에 들어가기 전에 적절한 패들링 기술과 안전 절차를 가르쳐드립니다.</p>
+                                <h3>🏔️ 한탄강 경험</h3>
+                                <p>래프팅 여정은 국제 인증 가이드들의 종합적인 안전 브리핑으로 시작됩니다. 한국에서 가장 장관인 풍경을 통과하는 수상 모험을 시작하기 전에 적절한 패들링 기술, 안전 절차, 강 항해를 배웁니다.</p>
 
-                                <p>한탄강은 스릴 넘치는 급류와 숨막히는 산 풍경을 즐길 수 있는 잔잔한 구간의 완벽한 조합을 제공합니다. 백로, 물총새, 그리고 운이 좋다면 한국 수달을 찾아보세요!</p>
+                                <p>한탄강은 스릴 넘치는 Class II-III 급류와 숨막히는 산 전망을 감상할 수 있는 고요한 떠있는 구간의 완벽한 조합을 제공합니다. 잔잔한 순간에는 한국 고라니, 산매, 그리고 가끔 강 수달 가족을 포함한 토종 야생동물을 찾아보세요!</p>
 
-                                <h3>제공되는 안전 장비</h3>
-                                <p>모든 안전 장비가 포함됩니다: 구명조끼, 헬멧, 패들, 그리고 웻슈트(계절별). 우리의 래프트는 정기적으로 점검되고 국제 안전 기준에 맞춰 관리됩니다.</p>
+                                <h3>🛡️ 프리미엄 안전 및 장비</h3>
+                                <p>여러분의 안전이 우리의 최우선 순위입니다. 모든 참가자는 충격 등급 헬멧, 해안 경비대 승인 구명조끼, 열 웻슈트(온도 의존), 탄소 섬유 패들을 포함한 전문급 장비를 받습니다. 우리의 래프트는 매일 안전 점검을 받고 국제 급류 안전 기준을 충족합니다.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div id="paintball" class="tab-content">
+                    <!-- Paintball Tab -->
+                    <div id="paintball" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
-                                <h2>Tactical Paintball Combat</h2>
-                                <img src="assets/images/paintball.jpg" alt="Paintball Combat Arena">
-                                <p>Engage in strategic team-based combat in our custom-designed paintball arena. With multiple game modes and terrain features, every battle is unique and exciting.</p>
+                                <h2>🎯 Tactical Paintball Combat Arena</h2>
+                                <img src="assets/images/paintball.jpg" alt="Professional Paintball Combat Arena">
+                                <p>Engage in strategic team-based combat in our professionally designed forest paintball arena. With multiple game scenarios and natural terrain features, every battle becomes a unique tactical challenge that tests both individual skill and team coordination.</p>
 
                                 <div class="highlight-box">
-                                    <h4>Paintball Details</h4>
-                                    <p><strong>Duration:</strong> 2-3 hours including briefing<br>
-                                    <strong>Game Modes:</strong> Capture the Flag, Team Elimination, VIP Escort<br>
-                                    <strong>Equipment:</strong> Semi-automatic markers, 500 paintballs included</p>
+                                    <h4>⚔️ Combat Arena Details</h4>
+                                    <p><strong>Duration:</strong> 3 hours including tactical briefing and multiple rounds<br>
+                                    <strong>Game Modes:</strong> Capture the Flag, Team Elimination, VIP Escort, King of the Hill<br>
+                                    <strong>Equipment:</strong> Semi-automatic markers, 500 premium paintballs, full protective gear<br>
+                                    <strong>Arena Size:</strong> 2-hectare natural forest battlefield</p>
                                 </div>
 
-                                <h3>Arena Features</h3>
-                                <p>Our paintball field features natural terrain with bunkers, barriers, and strategic positions. The wooded environment provides excellent cover and creates an immersive combat experience.</p>
+                                <h3>🌲 Professional Arena Features</h3>
+                                <p>Our paintball battlefield utilizes natural forest terrain enhanced with strategic bunkers, elevated positions, and tactical barriers. The wooded environment provides excellent natural cover while multiple elevation changes create dynamic combat scenarios that require both strategy and quick thinking.</p>
 
-                                <h3>Game Formats</h3>
-                                <p>We offer various game formats to keep the action fresh and challenging. From classic team elimination to objective-based missions, strategy and teamwork are key to victory.</p>
+                                <h3>🎮 Dynamic Game Formats</h3>
+                                <p>Experience various tactical scenarios from classic team elimination to complex objective-based missions. Our professional game marshals ensure fair play while adapting scenarios based on skill levels and group dynamics. Strategy, communication, and teamwork are your keys to victory!</p>
+
+                                <h3>🛡️ Safety & Equipment Standards</h3>
+                                <p>All participants receive professional-grade protective equipment including full-face masks, padded vests, and gloves. Our paintball markers are chronographed for safety compliance and use biodegradable, washable paint that's environmentally friendly.</p>
                             </div>
 
                             <div class="ko hidden">
-                                <h2>전술 페인트볼 전투</h2>
-                                <img src="assets/images/paintball.jpg" alt="페인트볼 전투 경기장">
-                                <p>맞춤 설계된 페인트볼 경기장에서 전략적 팀 기반 전투에 참여하세요. 다양한 게임 모드와 지형 특성으로 모든 전투가 독특하고 흥미진진합니다.</p>
+                                <h2>🎯 전술 페인트볼 전투 경기장</h2>
+                                <img src="assets/images/paintball.jpg" alt="전문 페인트볼 전투 경기장">
+                                <p>전문적으로 설계된 숲 페인트볼 경기장에서 전략적 팀 기반 전투에 참여하세요. 다양한 게임 시나리오와 자연 지형 특성으로 모든 전투가 개인 기술과 팀 협조 모두를 테스트하는 독특한 전술적 도전이 됩니다.</p>
 
                                 <div class="highlight-box">
-                                    <h4>페인트볼 세부사항</h4>
-                                    <p><strong>소요시간:</strong> 브리핑 포함 2-3시간<br>
-                                    <strong>게임 모드:</strong> 깃발 뺏기, 팀 제거, VIP 호위<br>
-                                    <strong>장비:</strong> 반자동 마커, 페인트볼 500발 포함</p>
+                                    <h4>⚔️ 전투 경기장 세부사항</h4>
+                                    <p><strong>소요시간:</strong> 전술 브리핑 및 다수 라운드 포함 3시간<br>
+                                    <strong>게임 모드:</strong> 깃발 뺏기, 팀 제거, VIP 호위, 언덕의 왕<br>
+                                    <strong>장비:</strong> 반자동 마커, 프리미엄 페인트볼 500발, 완전 보호 장비<br>
+                                    <strong>경기장 크기:</strong> 2헥타르 자연 숲 전장</p>
                                 </div>
 
-                                <h3>경기장 특징</h3>
-                                <p>우리의 페인트볼 필드는 벙커, 장벽, 전략적 위치가 있는 자연 지형을 특징으로 합니다. 숲 환경은 우수한 엄폐물을 제공하고 몰입감 있는 전투 경험을 만들어냅니다.</p>
+                                <h3>🌲 전문 경기장 특징</h3>
+                                <p>우리의 페인트볼 전장은 전략적 벙커, 고지대 위치, 전술 장벽으로 강화된 자연 숲 지형을 활용합니다. 숲 환경은 우수한 자연 엄폐물을 제공하며 다양한 고도 변화는 전략과 빠른 사고 모두를 요구하는 역동적인 전투 시나리오를 만들어냅니다.</p>
 
-                                <h3>게임 형식</h3>
-                                <p>액션을 신선하고 도전적으로 유지하기 위해 다양한 게임 형식을 제공합니다. 클래식 팀 제거부터 목표 기반 미션까지, 전략과 팀워크가 승리의 열쇠입니다.</p>
+                                <h3>🎮 다이나믹 게임 형식</h3>
+                                <p>클래식 팀 제거부터 복잡한 목표 기반 미션까지 다양한 전술 시나리오를 경험하세요. 우리의 전문 게임 마샬은 기술 수준과 그룹 역학에 따라 시나리오를 조정하면서 공정한 플레이를 보장합니다. 전략, 의사소통, 팀워크가 승리의 열쇠입니다!</p>
+
+                                <h3>🛡️ 안전 및 장비 기준</h3>
+                                <p>모든 참가자는 풀 페이스 마스크, 패딩 조끼, 장갑을 포함한 전문급 보호 장비를 받습니다. 우리의 페인트볼 마커는 안전 준수를 위해 크로노그래프되며 환경 친화적인 생분해성, 세탁 가능한 페인트를 사용합니다.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div id="atv" class="tab-content">
+                    <!-- ATV Tab -->
+                    <div id="atv" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
-                                <h2>ATV & Fourwheeling Adventure</h2>
+                                <h2>🏍️ Mountain ATV Adventure Experience</h2>
                                 <img src="assets/images/atv.jpg" alt="ATV Adventure Through Korean Mountains">
-                                <p>Explore rugged mountain trails on powerful all-terrain vehicles. Our ATV adventure takes you through scenic mountain paths and challenging off-road terrain.</p>
+                                <p>Conquer rugged mountain trails on powerful all-terrain vehicles through some of Korea's most spectacular wilderness areas. Our ATV adventure combines adrenaline-pumping off-road action with breathtaking scenic views of pristine mountain landscapes.</p>
 
                                 <div class="highlight-box">
-                                    <h4>ATV Details</h4>
-                                    <p><strong>Duration:</strong> 2 hours including safety training<br>
-                                    <strong>Vehicle Type:</strong> 250cc automatic ATVs<br>
-                                    <strong>Trail Difficulty:</strong> Beginner to Intermediate</p>
+                                    <h4>🏔️ ATV Adventure Details</h4>
+                                    <p><strong>Duration:</strong> 2.5 hours including comprehensive safety training<br>
+                                    <strong>Vehicle Type:</strong> 400cc automatic transmission ATVs with 4WD capability<br>
+                                    <strong>Trail Difficulty:</strong> Beginner to Intermediate with multiple route options<br>
+                                    <strong>Terrain:</strong> Mountain trails, stream crossings, forest paths</p>
                                 </div>
 
-                                <h3>Trail Experience</h3>
-                                <p>Navigate through forest paths, cross streams, and climb mountain slopes while enjoying spectacular views of the Korean countryside. Our trails are designed to provide excitement while maintaining safety.</p>
+                                <h3>🌄 Epic Trail Experience</h3>
+                                <p>Navigate through diverse Korean mountain terrain including forest single tracks, rocky stream crossings, and panoramic ridge lines with stunning valley views. Our carefully planned routes showcase Korea's natural beauty while providing the perfect balance of excitement and safety for riders of all experience levels.</p>
 
-                                <h3>Safety Training</h3>
-                                <p>All riders receive comprehensive safety training and must demonstrate basic riding skills before accessing the trails. Helmets and protective gear are mandatory.</p>
+                                <h3>🎓 Professional Training Program</h3>
+                                <p>All riders participate in our comprehensive ATV training program covering vehicle operation, safety protocols, and trail etiquette. Our certified instructors ensure every participant feels confident and prepared before accessing the mountain trails. No prior ATV experience required!</p>
+
+                                <h3>🛡️ Premium Safety Standards</h3>
+                                <p>Safety is paramount in our ATV operations. All riders receive DOT-approved helmets, protective eyewear, and safety briefings. Our ATVs undergo pre-ride safety inspections and feature automatic transmissions for easier handling. Professional guides accompany all trail rides with radio communication for immediate assistance.</p>
                             </div>
 
                             <div class="ko hidden">
-                                <h2>ATV & 사륜구동 어드벤처</h2>
+                                <h2>🏍️ 산악 ATV 어드벤처 경험</h2>
                                 <img src="assets/images/atv.jpg" alt="한국 산을 통한 ATV 어드벤처">
-                                <p>강력한 전지형 차량으로 험준한 산악 트레일을 탐험하세요. 우리의 ATV 어드벤처는 경치 좋은 산길과 도전적인 오프로드 지형을 통과합니다.</p>
+                                <p>한국에서 가장 장관인 야생 지역을 통과하는 강력한 전지형 차량으로 험준한 산악 트레일을 정복하세요. 우리의 ATV 어드벤처는 아드레날린이 솟구치는 오프로드 액션과 깨끗한 산악 경관의 숨막히는 경치를 결합합니다.</p>
 
                                 <div class="highlight-box">
-                                    <h4>ATV 세부사항</h4>
-                                    <p><strong>소요시간:</strong> 안전 교육 포함 2시간<br>
-                                    <strong>차량 유형:</strong> 250cc 자동 ATV<br>
-                                    <strong>트레일 난이도:</strong> 초급자부터 중급자</p>
+                                    <h4>🏔️ ATV 어드벤처 세부사항</h4>
+                                    <p><strong>소요시간:</strong> 종합적인 안전 교육 포함 2.5시간<br>
+                                    <strong>차량 유형:</strong> 4WD 기능이 있는 400cc 자동 변속 ATV<br>
+                                    <strong>트레일 난이도:</strong> 다중 루트 옵션이 있는 초급자부터 중급자<br>
+                                    <strong>지형:</strong> 산악 트레일, 개울 횡단, 숲길</p>
                                 </div>
 
-                                <h3>트레일 경험</h3>
-                                <p>한국 시골의 멋진 경치를 즐기면서 숲길을 항해하고, 개울을 건너고, 산비탈을 오르세요. 우리의 트레일은 안전을 유지하면서 흥미를 제공하도록 설계되었습니다.</p>
+                                <h3>🌄 서사적 트레일 경험</h3>
+                                <p>숲 싱글 트랙, 바위 개울 횡단, 멋진 계곡 전망이 있는 파노라마 능선을 포함한 다양한 한국 산악 지형을 항해하세요. 우리의 신중하게 계획된 루트는 모든 경험 수준의 라이더에게 흥미와 안전의 완벽한 균형을 제공하면서 한국의 자연미를 보여줍니다.</p>
 
-                                <h3>안전 교육</h3>
-                                <p>모든 라이더는 종합적인 안전 교육을 받고 트레일에 접근하기 전에 기본 라이딩 기술을 시연해야 합니다. 헬멧과 보호 장비는 필수입니다.</p>
+                                <h3>🎓 전문 교육 프로그램</h3>
+                                <p>모든 라이더는 차량 조작, 안전 프로토콜, 트레일 에티켓을 다루는 종합적인 ATV 교육 프로그램에 참여합니다. 인증받은 강사들이 산악 트레일에 접근하기 전에 모든 참가자가 자신감 있고 준비된 느낌을 받도록 보장합니다. 사전 ATV 경험이 필요하지 않습니다!</p>
+
+                                <h3>🛡️ 프리미엄 안전 기준</h3>
+                                <p>안전은 우리 ATV 운영에서 가장 중요합니다. 모든 라이더는 DOT 승인 헬멧, 보호 안경, 안전 브리핑을 받습니다. 우리의 ATV는 라이딩 전 안전 점검을 받고 더 쉬운 조작을 위한 자동 변속기를 특징으로 합니다. 전문 가이드가 즉시 지원을 위한 무선 통신과 함께 모든 트레일 라이딩에 동행합니다.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div id="bungee" class="tab-content">
+                    <!-- Bungee Jumping Tab -->
+                    <div id="bungee" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
-                                <h2>Bungee Jumping Experience</h2>
+                                <h2>🪂 Ultimate Bungee Jumping Experience</h2>
                                 <img src="assets/images/bungee.jpg" alt="Bungee Jumping in Korea">
-                                <p>Take the ultimate leap of faith from our 50-meter high platform overlooking a stunning mountain valley. This is the highlight experience for thrill-seekers!</p>
+                                <p>Take the ultimate leap of faith from our 50-meter high platform overlooking a stunning mountain valley. This is the crown jewel experience for thrill-seekers and the ultimate test of courage!</p>
 
                                 <div class="highlight-box">
-                                    <h4>Bungee Details</h4>
-                                    <p><strong>Height:</strong> 50 meters (164 feet)<br>
-                                    <strong>Safety Standard:</strong> International bungee safety protocols<br>
-                                    <strong>Weight Limit:</strong> 45-110kg (99-242 lbs)</p>
+                                    <h4>🪂 Bungee Jump Details</h4>
+                                    <p><strong>Height:</strong> 50 meters (164 feet) above pristine valley<br>
+                                    <strong>Safety Standard:</strong> International bungee safety protocols and equipment<br>
+                                    <strong>Weight Limit:</strong> 45-110kg (99-242 lbs)<br>
+                                    <strong>Jump Style:</strong> Forward dive or backward leap options</p>
                                 </div>
 
-                                <h3>The Experience</h3>
-                                <p>Feel the adrenaline rush as you stand on the edge of our jumping platform. Our experienced jump masters will guide you through every step, ensuring your safety while maximizing the thrill.</p>
+                                <h3>🌟 The Ultimate Adrenaline Experience</h3>
+                                <p>Feel the rush of pure adrenaline as you stand on the edge of our jumping platform, surrounded by breathtaking mountain vistas. Our experienced jump masters will guide you through every step of the process, ensuring your safety while maximizing the incredible thrill of free-falling through the Korean mountain air.</p>
 
-                                <h3>Safety Measures</h3>
-                                <p>We use only the highest quality bungee cords and harnesses, inspected daily. All equipment meets international safety standards, and our jump masters are certified professionals.</p>
+                                <h3>🔒 World-Class Safety Measures</h3>
+                                <p>We use only the highest quality bungee cords and harnesses, inspected daily by certified professionals. All equipment meets stringent international safety standards, and our jump masters are certified by the International Bungee Association. Multiple backup safety systems ensure your jump is both thrilling and secure.</p>
+
+                                <h3>📸 Capture the Moment</h3>
+                                <p>Professional photography and video services available to capture your epic leap. Take home a lasting memory of your courage and the stunning Korean landscape backdrop!</p>
                             </div>
 
                             <div class="ko hidden">
-                                <h2>번지점프 경험</h2>
-                                <img src="assets/images/bungee.jpg" alt="Bungee Jumping in Korea">
-                                <p>아름다운 산골짜기를 내려다보는 50미터 높이의 플랫폼에서 궁극의 믿음의 도약을 하세요. 이것은 스릴을 추구하는 사람들을 위한 하이라이트 경험입니다!</p>
+                                <h2>🪂 궁극의 번지점프 경험</h2>
+                                <img src="assets/images/bungee.jpg" alt="한국에서의 번지점프">
+                                <p>아름다운 산골짜기를 내려다보는 50미터 높이의 플랫폼에서 궁극의 믿음의 도약을 하세요. 이것은 스릴을 추구하는 사람들을 위한 왕관보석 경험이자 용기의 궁극적인 시험입니다!</p>
 
                                 <div class="highlight-box">
-                                    <h4>번지 세부사항</h4>
-                                    <p><strong>높이:</strong> 50미터 (164피트)<br>
-                                    <strong>안전 기준:</strong> 국제 번지 안전 프로토콜<br>
-                                    <strong>체중 제한:</strong> 45-110kg (99-242 파운드)</p>
+                                    <h4>🪂 번지점프 세부사항</h4>
+                                    <p><strong>높이:</strong> 깨끗한 계곡 위 50미터 (164피트)<br>
+                                    <strong>안전 기준:</strong> 국제 번지 안전 프로토콜 및 장비<br>
+                                    <strong>체중 제한:</strong> 45-110kg (99-242 파운드)<br>
+                                    <strong>점프 스타일:</strong> 앞으로 다이빙 또는 뒤로 도약 옵션</p>
                                 </div>
 
-                                <h3>경험</h3>
-                                <p>점프 플랫폼 가장자리에 서 있을 때 아드레날린 러시를 느껴보세요. 경험 많은 점프 마스터들이 스릴을 최대화하면서 안전을 보장하며 모든 단계를 안내해드립니다.</p>
+                                <h3>🌟 궁극의 아드레날린 경험</h3>
+                                <p>숨막히는 산 전망에 둘러싸인 점프 플랫폼 가장자리에 서 있을 때 순수한 아드레날린의 러시를 느껴보세요. 경험 많은 점프 마스터들이 한국 산악 공기를 통해 자유 낙하하는 놀라운 스릴을 최대화하면서 안전을 보장하며 과정의 모든 단계를 안내해드립니다.</p>
 
-                                <h3>안전 조치</h3>
-                                <p>매일 점검되는 최고 품질의 번지 코드와 하네스만을 사용합니다. 모든 장비는 국제 안전 기준을 충족하며, 우리의 점프 마스터들은 인증받은 전문가들입니다.</p>
+                                <h3>🔒 세계적 수준의 안전 조치</h3>
+                                <p>인증받은 전문가들이 매일 점검하는 최고 품질의 번지 코드와 하네스만을 사용합니다. 모든 장비는 엄격한 국제 안전 기준을 충족하며, 우리의 점프 마스터들은 국제 번지 협회의 인증을 받았습니다. 다중 백업 안전 시스템이 여러분의 점프가 스릴 넘치고 안전하도록 보장합니다.</p>
+
+                                <h3>📸 순간을 포착하세요</h3>
+                                <p>서사적인 도약을 포착할 수 있는 전문 사진 및 비디오 서비스 이용 가능. 용기와 아름다운 한국 경관 배경의 지속적인 추억을 집으로 가져가세요!</p>
                             </div>
                         </div>
                     </div>
 
-                    <div id="food" class="tab-content">
+                    <!-- Food and Lodging Tab -->
+                    <div id="food" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
-                                <h2>Food & Accommodation</h2>
-                                <img src="assets/images/food.jpg" alt="Delicious Korean BBQ">
-                                <p>Enjoy authentic Korean cuisine and comfortable lodging throughout your adventure. We've carefully selected local restaurants and accommodations to enhance your Korean cultural experience.</p>
+                                <h2>🍽️ Gourmet Korean Cuisine & Mountain Lodge</h2>
+                                <img src="assets/images/food.jpg" alt="Delicious Korean BBQ and Traditional Cuisine">
+                                <p>Savor authentic Korean cuisine and enjoy comfortable mountain lodge accommodation throughout your adventure. We've carefully selected premium local ingredients and traditional cooking methods to enhance your Korean cultural experience while providing modern comfort and convenience.</p>
 
                                 <div class="highlight-box">
-                                    <h4>Meal Plan</h4>
-                                    <p><strong>Day 1:</strong> Welcome lunch, BBQ dinner<br>
-                                    <strong>Day 2:</strong> Korean breakfast, packed lunch, farewell dinner<br>
-                                    <strong>Special Diets:</strong> Vegetarian and halal options available</p>
+                                    <h4>🍱 Complete Meal Plan</h4>
+                                    <p><strong>Day 1:</strong> Welcome Korean lunch, Premium BBQ dinner with local specialties<br>
+                                    <strong>Day 2:</strong> Traditional Korean breakfast, Gourmet packed lunch, Farewell celebration dinner<br>
+                                    <strong>Special Diets:</strong> Vegetarian, vegan, halal, and gluten-free options available<br>
+                                    <strong>Beverages:</strong> Korean traditional teas, local mountain spring water, evening social drinks</p>
                                 </div>
 
-                                <h3>Accommodation</h3>
-                                <p>Stay in a comfortable mountain lodge with modern amenities. Rooms are double occupancy with private bathrooms, heating/AC, and Wi-Fi access.</p>
+                                <h3>🏔️ Premium Mountain Lodge Accommodation</h3>
+                                <p>Stay in our carefully selected mountain lodge featuring modern amenities with traditional Korean architectural elements. Rooms are designed for comfort with double occupancy, private bathrooms, ondol (Korean floor heating), air conditioning, and complimentary Wi-Fi access. Wake up to stunning mountain views from every room!</p>
 
-                                <h3>Dining Experience</h3>
-                                <p>Sample traditional Korean dishes including bulgogi BBQ, bibimbap, and local specialties. All meals are prepared with fresh, local ingredients.</p>
+                                <h3>🥘 Authentic Dining Experiences</h3>
+                                <p>Experience the best of Korean culinary traditions including premium bulgogi BBQ, fresh bibimbap with local vegetables, traditional kimchi varieties, and regional mountain specialties. All meals are prepared with fresh, locally-sourced ingredients by experienced Korean chefs who take pride in sharing their culinary heritage.</p>
+
+                                <h3>🌿 Local & Sustainable Practices</h3>
+                                <p>We partner with local farmers and suppliers to ensure the freshest ingredients while supporting the mountain community. Our lodge follows eco-friendly practices including waste reduction, energy conservation, and local sourcing to minimize environmental impact.</p>
                             </div>
 
                             <div class="ko hidden">
-                                <h2>식사 및 숙박</h2>
-                                <img src="assets/images/food.jpg" alt="Delicious Korean BBQ">
-                                <p>모험 전반에 걸쳐 정통 한국 요리와 편안한 숙박을 즐기세요. 한국 문화 경험을 향상시키기 위해 지역 레스토랑과 숙박 시설을 신중하게 선별했습니다.</p>
+                                <h2>🍽️ 미식 한국 요리 & 산장</h2>
+                                <img src="assets/images/food.jpg" alt="맛있는 한국 BBQ와 전통 요리">
+                                <p>모험 전반에 걸쳐 정통 한국 요리를 맛보고 편안한 산장 숙박을 즐기세요. 현대적인 편안함과 편의성을 제공하면서 한국 문화 경험을 향상시키기 위해 프리미엄 지역 재료와 전통 요리 방법을 신중하게 선별했습니다.</p>
 
                                 <div class="highlight-box">
-                                    <h4>식사 계획</h4>
-                                    <p><strong>1일차:</strong> 환영 점심, BBQ 저녁<br>
-                                    <strong>2일차:</strong> 한국식 아침, 도시락 점심, 작별 저녁<br>
-                                    <strong>특별 식단:</strong> 채식주의자 및 할랄 옵션 제공</p>
+                                    <h4>🍱 완전한 식사 계획</h4>
+                                    <p><strong>1일차:</strong> 환영 한국 점심, 지역 특산품이 포함된 프리미엄 BBQ 저녁<br>
+                                    <strong>2일차:</strong> 전통 한국 아침식사, 미식 도시락 점심, 작별 축하 저녁<br>
+                                    <strong>특별 식단:</strong> 채식주의자, 비건, 할랄, 글루텐 프리 옵션 제공<br>
+                                    <strong>음료:</strong> 한국 전통차, 지역 산 샘물, 저녁 사교 음료</p>
                                 </div>
 
-                                <h3>숙박</h3>
-                                <p>현대적인 편의시설을 갖춘 편안한 산장에서 머무르세요. 객실은 2인실이며 개인 욕실, 난방/에어컨, Wi-Fi 접속이 가능합니다.</p>
+                                <h3>🏔️ 프리미엄 산장 숙박</h3>
+                                <p>전통 한국 건축 요소가 있는 현대적 편의시설을 갖춘 신중하게 선별된 산장에서 머무르세요. 객실은 2인실, 개인 욕실, 온돌(한국 바닥 난방), 에어컨, 무료 Wi-Fi 접속으로 편안함을 위해 설계되었습니다. 모든 객실에서 멋진 산 전망으로 잠에서 깨어나세요!</p>
 
-                                <h3>식사 경험</h3>
-                                <p>불고기 BBQ, 비빔밥, 지역 특산품을 포함한 전통 한국 요리를 맛보세요. 모든 식사는 신선한 지역 재료로 준비됩니다.</p>
+                                <h3>🥘 정통 식사 경험</h3>
+                                <p>프리미엄 불고기 BBQ, 지역 야채가 들어간 신선한 비빔밥, 전통 김치 종류, 지역 산악 특산품을 포함한 한국 요리 전통의 최고를 경험하세요. 모든 식사는 요리 유산을 공유하는 데 자부심을 갖는 경험 많은 한국 요리사들이 신선한 현지 조달 재료로 준비합니다.</p>
+
+                                <h3>🌿 지역 및 지속 가능한 관행</h3>
+                                <p>산악 커뮤니티를 지원하면서 가장 신선한 재료를 보장하기 위해 지역 농부 및 공급업체와 파트너십을 맺고 있습니다. 우리 산장은 환경 영향을 최소화하기 위해 폐기물 감소, 에너지 절약, 지역 조달을 포함한 친환경 관행을 따릅니다.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div id="transportation" class="tab-content">
+                    <!-- Transportation Tab -->
+                    <div id="transportation" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
-                                <h2>Transportation</h2>
-                                <img src="assets/images/bus.jpg" alt="Comfortable Coach Bus">
-                                <p>Comfortable and convenient transportation is provided throughout the entire trip. We handle all the logistics so you can focus on having fun!</p>
+                                <h2>🚌 Premium Transportation Service</h2>
+                                <img src="assets/images/bus.jpg" alt="Luxury Coach Bus Transportation">
+                                <p>Enjoy comfortable and convenient transportation throughout the entire adventure experience. We handle all logistics with premium vehicles and professional drivers so you can focus entirely on having an amazing time and creating unforgettable memories!</p>
 
                                 <div class="highlight-box">
-                                    <h4>Transport Details</h4>
-                                    <p><strong>Departure:</strong> Seoul Station (KTX platform)<br>
-                                    <strong>Vehicle:</strong> Modern air-conditioned coach bus<br>
-                                    <strong>Travel Time:</strong> 2 hours to activity location</p>
+                                    <h4>🚐 Transportation Details</h4>
+                                    <p><strong>Departure Point:</strong> Seoul Station (KTX East Plaza, Exit 1)<br>
+                                    <strong>Vehicle Type:</strong> Luxury air-conditioned coach bus with reclining seats<br>
+                                    <strong>Travel Time:</strong> 2 hours to mountain adventure base<br>
+                                    <strong>Departure:</strong> Saturday 7:00 AM sharp | Return: Sunday 7:00 PM</p>
                                 </div>
 
-                                <h3>Pickup & Return</h3>
-                                <p>We depart from Seoul Station at 7:00 AM on Saturday and return by 7:00 PM on Sunday. Exact meeting point details will be provided upon registration.</p>
+                                <h3>🏢 Convenient Seoul Pickup & Return</h3>
+                                <p>We depart from the easily accessible Seoul Station at 7:00 AM on Saturday morning and return by 7:00 PM on Sunday evening. Detailed meeting point instructions with maps and contact information will be provided upon registration confirmation. Late arrivals cannot be accommodated due to group scheduling.</p>
 
-                                <h3>During Activities</h3>
-                                <p>Local transportation between activity sites is included. Our vehicles are equipped with safety features and driven by experienced drivers familiar with mountain roads.</p>
+                                <h3>🚗 Local Activity Transportation</h3>
+                                <p>All transportation between activity sites, lodge, and dining locations is included in your package. Our fleet of modern vehicles is equipped with comprehensive safety features and driven by experienced local drivers who are familiar with mountain roads and safety protocols.</p>
+
+                                <h3>🛡️ Safety & Comfort Features</h3>
+                                <p>All vehicles undergo regular safety inspections and are equipped with GPS tracking, emergency communication systems, first aid kits, and comprehensive insurance coverage. Comfortable seating, climate control, and onboard restroom facilities ensure a pleasant journey.</p>
                             </div>
 
                             <div class="ko hidden">
-                                <h2>교통편</h2>
-                                <img src="assets/images/bus.jpg" alt="Comfortable Coach Bus">
-                                <p>전체 여행 기간 동안 편안하고 편리한 교통편이 제공됩니다. 우리가 모든 물류를 처리하므로 여러분은 즐기는 데만 집중하시면 됩니다!</p>
+                                <h2>🚌 프리미엄 교통 서비스</h2>
+                                <img src="assets/images/bus.jpg" alt="럭셔리 코치 버스 교통편">
+                                <p>전체 어드벤처 경험 동안 편안하고 편리한 교통편을 즐기세요. 프리미엄 차량과 전문 운전자로 모든 물류를 처리하므로 여러분은 놀라운 시간을 보내고 잊을 수 없는 추억을 만드는 데만 완전히 집중할 수 있습니다!</p>
 
                                 <div class="highlight-box">
-                                    <h4>교통편 세부사항</h4>
-                                    <p><strong>출발:</strong> 서울역 (KTX 승강장)<br>
-                                    <strong>차량:</strong> 현대식 에어컨 완비 코치 버스<br>
-                                    <strong>이동 시간:</strong> 액티비티 장소까지 2시간</p>
+                                    <h4>🚐 교통편 세부사항</h4>
+                                    <p><strong>출발 지점:</strong> 서울역 (KTX 동편 광장, 1번 출구)<br>
+                                    <strong>차량 유형:</strong> 리클라이닝 좌석이 있는 럭셔리 에어컨 완비 코치 버스<br>
+                                    <strong>이동 시간:</strong> 산악 어드벤처 기지까지 2시간<br>
+                                    <strong>출발:</strong> 토요일 오전 7시 정각 | 복귀: 일요일 오후 7시</p>
                                 </div>
 
-                                <h3>픽업 및 귀환</h3>
-                                <p>토요일 오전 7시에 서울역에서 출발하여 일요일 오후 7시까지 돌아옵니다. 정확한 만남 장소 세부사항은 등록 시 제공됩니다.</p>
+                                <h3>🏢 편리한 서울 픽업 및 복귀</h3>
+                                <p>토요일 오전 7시에 접근하기 쉬운 서울역에서 출발하여 일요일 오후 7시까지 돌아옵니다. 지도와 연락처 정보가 포함된 자세한 만남 장소 안내는 등록 확인 시 제공됩니다. 그룹 일정으로 인해 늦은 도착은 수용될 수 없습니다.</p>
 
-                                <h3>액티비티 중</h3>
-                                <p>액티비티 사이트 간 현지 교통편이 포함됩니다. 우리 차량은 안전 기능을 갖추고 있으며 산악 도로에 익숙한 경험 많은 운전자가 운전합니다.</p>
+                                <h3>🚗 현지 액티비티 교통편</h3>
+                                <p>액티비티 사이트, 산장, 식사 장소 간의 모든 교통편이 패키지에 포함되어 있습니다. 현대식 차량 함대는 종합적인 안전 기능을 갖추고 있으며 산악 도로와 안전 프로토콜에 익숙한 경험 많은 현지 운전자가 운전합니다.</p>
+
+                                <h3>🛡️ 안전 및 편안함 기능</h3>
+                                <p>모든 차량은 정기적인 안전 점검을 받고 GPS 추적, 비상 통신 시스템, 응급처치 키트, 종합 보험 적용을 갖추고 있습니다. 편안한 좌석, 온도 조절, 온보드 화장실 시설이 쾌적한 여행을 보장합니다.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div id="faq" class="tab-content">
+                    <!-- FAQ Tab -->
+                    <div id="faq" class="tab-content animate-on-scroll">
                         <div class="content-section">
                             <div class="en">
-                                <h2>Frequently Asked Questions</h2>
+                                <h2>❓ Frequently Asked Questions</h2>
                                 
                                 <div class="faq-container">
                                     <div class="faq-item">
@@ -412,41 +488,68 @@
                                             What should I bring on the trip?
                                         </button>
                                         <div class="faq-answer">
-                                            <p>Bring comfortable clothes that can get wet/dirty, extra clothes, sunscreen, water bottle, and personal items. All activity equipment is provided.</p>
+                                            <p>Bring comfortable clothes that can get wet/dirty, extra clothes for the evening, sunscreen (SPF 30+), personal water bottle, camera/phone in waterproof case, and personal toiletries. All activity equipment and safety gear is provided. Detailed packing list sent upon registration.</p>
                                         </div>
                                     </div>
 
                                     <div class="faq-item">
                                         <button class="faq-question" aria-expanded="false">
-                                            Is this trip suitable for beginners?
+                                            Is this trip suitable for complete beginners?
                                         </button>
                                         <div class="faq-answer">
-                                            <p>Yes! All activities are designed for beginners with full instruction and safety briefings. No prior experience is required.</p>
+                                            <p>Absolutely! All activities are designed for beginners with comprehensive instruction and safety briefings. Our certified guides provide step-by-step training before each activity. No prior experience is required - just enthusiasm and willingness to try new adventures!</p>
                                         </div>
                                     </div>
 
                                     <div class="faq-item">
                                         <button class="faq-question" aria-expanded="false">
-                                            What's the cancellation policy?
+                                            What's the cancellation and refund policy?
                                         </button>
                                         <div class="faq-answer">
-                                            <p>Full refund if cancelled 7+ days before. 50% refund if cancelled 3-6 days before. No refund for cancellations within 48 hours.</p>
+                                            <p>Full refund if cancelled 7+ days before trip date. 50% refund if cancelled 3-6 days before. No refund for cancellations within 48 hours of departure. Weather-related cancellations receive full refund or rescheduling option. Trip insurance is recommended.</p>
                                         </div>
                                     </div>
 
                                     <div class="faq-item">
                                         <button class="faq-question" aria-expanded="false">
-                                            Are there age restrictions?
+                                            Are there age restrictions for activities?
                                         </button>
                                         <div class="faq-answer">
-                                            <p>Participants must be 16+ for all activities. Bungee jumping requires participants to be 18+ with signed waiver.</p>
+                                            <p>Participants must be 16+ for rafting, paintball, and ATV. Bungee jumping requires participants to be 18+ with signed liability waiver and weight between 45-110kg. All minors (16-17) require parental consent forms and emergency contact information.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="faq-item">
+                                        <button class="faq-question" aria-expanded="false">
+                                            What happens in case of bad weather?
+                                        </button>
+                                        <div class="faq-answer">
+                                            <p>Safety is our priority. Activities may be modified or postponed for severe weather. Light rain doesn't stop most activities - it often makes them more exciting! We monitor weather closely and have indoor backup activities. Full refunds offered if trip is cancelled due to dangerous conditions.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="faq-item">
+                                        <button class="faq-question" aria-expanded="false">
+                                            Can I join if I don't speak Korean?
+                                        </button>
+                                        <div class="faq-answer">
+                                            <p>Yes! All our guides are bilingual (Korean/English) and safety briefings are conducted in both languages. Our international participants are always welcomed and we ensure everyone feels included regardless of language background.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="faq-item">
+                                        <button class="faq-question" aria-expanded="false">
+                                            Is travel insurance included?
+                                        </button>
+                                        <div class="faq-answer">
+                                            <p>Basic activity insurance is included covering emergency medical treatment during activities. However, we strongly recommend purchasing comprehensive travel insurance for additional coverage including trip cancellation, personal belongings, and extended medical coverage.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="ko hidden">
-                                <h2>자주 묻는 질문</h2>
+                                <h2>❓ 자주 묻는 질문</h2>
                                 
                                 <div class="faq-container">
                                     <div class="faq-item">
@@ -454,34 +557,61 @@
                                             여행에 무엇을 가져가야 하나요?
                                         </button>
                                         <div class="faq-answer">
-                                            <p>젖거나 더러워질 수 있는 편안한 옷, 여벌 옷, 자외선 차단제, 물병, 개인 용품을 가져오세요. 모든 액티비티 장비는 제공됩니다.</p>
+                                            <p>젖거나 더러워질 수 있는 편안한 옷, 저녁용 여벌 옷, 자외선 차단제 (SPF 30+), 개인 물병, 방수 케이스에 넣은 카메라/휴대폰, 개인 세면용품을 가져오세요. 모든 액티비티 장비와 안전 장비는 제공됩니다. 자세한 준비물 목록은 등록 시 발송됩니다.</p>
                                         </div>
                                     </div>
 
                                     <div class="faq-item">
                                         <button class="faq-question" aria-expanded="false">
-                                            이 여행은 초보자에게 적합한가요?
+                                            이 여행은 완전한 초보자에게 적합한가요?
                                         </button>
                                         <div class="faq-answer">
-                                            <p>네! 모든 액티비티는 완전한 지도와 안전 브리핑과 함께 초보자를 위해 설계되었습니다. 사전 경험은 필요하지 않습니다.</p>
+                                            <p>물론입니다! 모든 액티비티는 종합적인 지도와 안전 브리핑과 함께 초보자를 위해 설계되었습니다. 인증받은 가이드들이 각 액티비티 전에 단계별 교육을 제공합니다. 사전 경험은 필요하지 않습니다 - 열정과 새로운 모험을 시도하려는 의지만 있으면 됩니다!</p>
                                         </div>
                                     </div>
 
                                     <div class="faq-item">
                                         <button class="faq-question" aria-expanded="false">
-                                            취소 정책은 무엇인가요?
+                                            취소 및 환불 정책은 무엇인가요?
                                         </button>
                                         <div class="faq-answer">
-                                            <p>7일 이상 전 취소 시 전액 환불. 3-6일 전 취소 시 50% 환불. 48시간 이내 취소 시 환불 불가.</p>
+                                            <p>여행 날짜 7일 이상 전 취소 시 전액 환불. 3-6일 전 취소 시 50% 환불. 출발 48시간 이내 취소 시 환불 불가. 날씨 관련 취소는 전액 환불 또는 일정 변경 옵션 제공. 여행 보험을 권장합니다.</p>
                                         </div>
                                     </div>
 
                                     <div class="faq-item">
                                         <button class="faq-question" aria-expanded="false">
-                                            연령 제한이 있나요?
+                                            액티비티에 연령 제한이 있나요?
                                         </button>
                                         <div class="faq-answer">
-                                            <p>모든 액티비티는 16세 이상이어야 합니다. 번지점프는 서명된 면책 동의서와 함께 18세 이상이어야 합니다.</p>
+                                            <p>래프팅, 페인트볼, ATV는 16세 이상이어야 합니다. 번지점프는 서명된 책임 면제 각서와 45-110kg 체중으로 18세 이상이어야 합니다. 모든 미성년자(16-17세)는 부모 동의서와 비상 연락처 정보가 필요합니다.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="faq-item">
+                                        <button class="faq-question" aria-expanded="false">
+                                            악천후의 경우 어떻게 되나요?
+                                        </button>
+                                        <div class="faq-answer">
+                                            <p>안전이 우리의 우선순위입니다. 심한 날씨로 인해 액티비티가 수정되거나 연기될 수 있습니다. 가벼운 비는 대부분의 액티비티를 중단시키지 않습니다 - 종종 더 흥미진진하게 만들죠! 날씨를 면밀히 모니터링하고 실내 백업 액티비티가 있습니다. 위험한 조건으로 인해 여행이 취소되면 전액 환불을 제공합니다.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="faq-item">
+                                        <button class="faq-question" aria-expanded="false">
+                                            한국어를 못해도 참여할 수 있나요?
+                                        </button>
+                                        <div class="faq-answer">
+                                            <p>네! 모든 가이드는 이중 언어(한국어/영어)를 구사하며 안전 브리핑은 두 언어로 진행됩니다. 국제 참가자들은 항상 환영받으며 언어 배경에 관계없이 모든 사람이 포함된 느낌을 받도록 보장합니다.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="faq-item">
+                                        <button class="faq-question" aria-expanded="false">
+                                            여행 보험이 포함되어 있나요?
+                                        </button>
+                                        <div class="faq-answer">
+                                            <p>액티비티 중 응급 의료 치료를 커버하는 기본 액티비티 보험이 포함되어 있습니다. 그러나 여행 취소, 개인 소지품, 확장 의료 적용을 포함한 추가 적용을 위해 종합 여행 보험 구매를 강력히 권장합니다.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -491,106 +621,116 @@
                 </div>
             </div>
 
+            <!-- About WinK Section -->
             <div id="about" class="main-section hidden">
                 <div class="main-content">
                     <div class="content-section">
                         <div class="en">
-                            <h2>About WinK (When in Korea)</h2>
-                            <p>WinK is Korea's premier adventure travel company, dedicated to providing unforgettable experiences for both locals and international visitors. Since our founding in 2018, we've helped thousands of adventurers discover the thrilling side of Korea.</p>
+                            <h1>About WinK (When in Korea)</h1>
+                            <p>WinK is Korea's premier adventure travel company, dedicated to providing unforgettable experiences for both locals and international visitors. Since our founding in 2018, we've helped thousands of adventurers discover the thrilling side of Korea while maintaining the highest standards of safety and cultural authenticity.</p>
 
                             <div class="highlight-box">
-                                <h4>Our Mission</h4>
-                                <p>To create safe, exciting, and culturally enriching adventure experiences that showcase the natural beauty and spirit of Korea.</p>
+                                <h4>🎯 Our Mission</h4>
+                                <p>To create safe, exciting, and culturally enriching adventure experiences that showcase the natural beauty and authentic spirit of Korea while fostering international friendship and cultural exchange.</p>
                             </div>
 
-                            <h3>Why Choose WinK?</h3>
-                            <p>Our team consists of certified adventure guides, safety experts, and local culture enthusiasts who are passionate about sharing Korea's hidden gems. We maintain the highest safety standards while ensuring maximum fun and cultural immersion.</p>
+                            <h3>🌟 Why Choose WinK for Your Korean Adventure?</h3>
+                            <p>Our passionate team consists of internationally certified adventure guides, safety experts, and local culture enthusiasts who are dedicated to sharing Korea's hidden gems. We maintain the highest international safety standards while ensuring maximum fun, cultural immersion, and authentic Korean hospitality.</p>
 
                             <div class="activity-grid">
                                 <div class="activity-card">
-                                    <h4>5+ Years Experience</h4>
-                                    <p>Established adventure tour operator with proven track record of safe, exciting trips.</p>
+                                    <h4>🏆 7+ Years Excellence</h4>
+                                    <p>Established adventure tour operator with proven track record of safe, exciting trips and thousands of satisfied international and local participants.</p>
                                 </div>
                                 <div class="activity-card">
-                                    <h4>Certified Guides</h4>
-                                    <p>All our guides are certified professionals with extensive training in adventure activities and safety protocols.</p>
+                                    <h4>🎓 Certified Professionals</h4>
+                                    <p>All guides are internationally certified with extensive training in adventure activities, wilderness first aid, and cultural sensitivity.</p>
                                 </div>
                                 <div class="activity-card">
-                                    <h4>Local Expertise</h4>
-                                    <p>Deep knowledge of Korean culture, cuisine, and hidden adventure spots off the beaten path.</p>
+                                    <h4>🇰🇷 Local Expertise</h4>
+                                    <p>Deep knowledge of Korean culture, traditional cuisine, and hidden adventure spots off the beaten path that only locals know.</p>
                                 </div>
                                 <div class="activity-card">
-                                    <h4>Safety First</h4>
-                                    <p>Rigorous safety standards and regular equipment inspections ensure worry-free adventures.</p>
+                                    <h4>🛡️ Safety Excellence</h4>
+                                    <p>Rigorous international safety standards, daily equipment inspections, and comprehensive insurance ensure worry-free adventures.</p>
                                 </div>
                             </div>
 
-                            <h3>Our Values</h3>
-                            <p>At WinK, we believe that adventure should be accessible, safe, and meaningful. We're committed to sustainable tourism practices and supporting local communities while providing world-class adventure experiences.</p>
+                            <h3>🌱 Our Values & Commitment</h3>
+                            <p>At WinK, we believe adventure should be accessible, safe, meaningful, and environmentally responsible. We're committed to sustainable tourism practices, supporting local mountain communities, and preserving Korea's natural beauty while providing world-class adventure experiences that create lasting international friendships.</p>
+
+                            <h3>🎖️ Awards & Recognition</h3>
+                            <p>WinK has been recognized by the Korea Tourism Organization for excellence in adventure tourism and has received safety certifications from international adventure tourism associations. Our commitment to quality and safety has made us the trusted choice for embassies, international schools, and corporate groups.</p>
                         </div>
 
                         <div class="ko hidden">
-                            <h2>WinK (When in Korea) 소개</h2>
-                            <p>WinK는 한국의 프리미어 어드벤처 여행 회사로, 현지인과 해외 방문객 모두에게 잊을 수 없는 경험을 제공하는 데 전념하고 있습니다. 2018년 설립 이후, 우리는 수천 명의 모험가들이 한국의 스릴 넘치는 면을 발견하도록 도왔습니다.</p>
+                            <h1>WinK (When in Korea) 소개</h1>
+                            <p>WinK는 한국의 프리미어 어드벤처 여행 회사로, 현지인과 해외 방문객 모두에게 잊을 수 없는 경험을 제공하는 데 전념하고 있습니다. 2018년 설립 이후, 최고 수준의 안전과 문화적 진정성을 유지하면서 수천 명의 모험가들이 한국의 스릴 넘치는 면을 발견하도록 도왔습니다.</p>
 
                             <div class="highlight-box">
-                                <h4>우리의 사명</h4>
-                                <p>한국의 자연미와 정신을 보여주는 안전하고 흥미진진하며 문화적으로 풍부한 어드벤처 경험을 만드는 것입니다.</p>
+                                <h4>🎯 우리의 사명</h4>
+                                <p>한국의 자연미와 진정한 정신을 보여주면서 국제적 우정과 문화 교류를 촉진하는 안전하고 흥미진진하며 문화적으로 풍부한 어드벤처 경험을 만드는 것입니다.</p>
                             </div>
 
-                            <h3>왜 WinK를 선택해야 할까요?</h3>
-                            <p>우리 팀은 한국의 숨겨진 보석을 공유하는 데 열정적인 인증된 어드벤처 가이드, 안전 전문가, 그리고 지역 문화 애호가들로 구성되어 있습니다. 우리는 최대한의 재미와 문화적 몰입을 보장하면서 최고의 안전 기준을 유지합니다.</p>
+                            <h3>🌟 한국 어드벤처를 위해 WinK를 선택해야 하는 이유는?</h3>
+                            <p>우리의 열정적인 팀은 한국의 숨겨진 보석을 공유하는 데 전념하는 국제 인증된 어드벤처 가이드, 안전 전문가, 그리고 지역 문화 애호가들로 구성되어 있습니다. 최대한의 재미, 문화적 몰입, 그리고 진정한 한국의 환대를 보장하면서 최고의 국제 안전 기준을 유지합니다.</p>
 
                             <div class="activity-grid">
                                 <div class="activity-card">
-                                    <h4>5년+ 경험</h4>
-                                    <p>안전하고 흥미진진한 여행의 입증된 실적을 가진 확립된 어드벤처 투어 운영업체.</p>
+                                    <h4>🏆 7년+ 우수성</h4>
+                                    <p>안전하고 흥미진진한 여행과 수천 명의 만족한 국제 및 현지 참가자들의 입증된 실적을 가진 확립된 어드벤처 투어 운영업체.</p>
                                 </div>
                                 <div class="activity-card">
-                                    <h4>인증된 가이드</h4>
-                                    <p>모든 가이드는 어드벤처 액티비티와 안전 프로토콜에 대한 광범위한 교육을 받은 인증된 전문가들입니다.</p>
+                                    <h4>🎓 인증된 전문가</h4>
+                                    <p>모든 가이드는 어드벤처 액티비티, 야생 응급처치, 문화적 민감성에 대한 광범위한 교육을 받은 국제 인증을 받았습니다.</p>
                                 </div>
                                 <div class="activity-card">
-                                    <h4>현지 전문성</h4>
-                                    <p>한국 문화, 요리, 그리고 숨겨진 어드벤처 스팟에 대한 깊은 지식.</p>
+                                    <h4>🇰🇷 현지 전문성</h4>
+                                    <p>현지인만이 아는 한국 문화, 전통 요리, 그리고 숨겨진 어드벤처 스팟에 대한 깊은 지식.</p>
                                 </div>
                                 <div class="activity-card">
-                                    <h4>안전 최우선</h4>
-                                    <p>엄격한 안전 기준과 정기적인 장비 점검으로 걱정 없는 모험을 보장합니다.</p>
+                                    <h4>🛡️ 안전 우수성</h4>
+                                    <p>엄격한 국제 안전 기준, 매일 장비 점검, 종합 보험이 걱정 없는 모험을 보장합니다.</p>
                                 </div>
                             </div>
 
-                            <h3>우리의 가치</h3>
-                            <p>WinK에서는 모험이 접근 가능하고, 안전하며, 의미가 있어야 한다고 믿습니다. 우리는 세계적 수준의 어드벤처 경험을 제공하면서 지속 가능한 관광 관행과 지역 커뮤니티 지원에 전념하고 있습니다.</p>
+                            <h3>🌱 우리의 가치 및 약속</h3>
+                            <p>WinK에서는 모험이 접근 가능하고, 안전하며, 의미 있고, 환경적으로 책임져야 한다고 믿습니다. 지속적인 국제적 우정을 만드는 세계적 수준의 어드벤처 경험을 제공하면서 지속 가능한 관광 관행, 지역 산악 커뮤니티 지원, 그리고 한국의 자연미 보존에 전념하고 있습니다.</p>
+
+                            <h3>🎖️ 수상 및 인정</h3>
+                            <p>WinK는 어드벤처 관광의 우수성으로 한국관광공사의 인정을 받았으며 국제 어드벤처 관광 협회로부터 안전 인증을 받았습니다. 품질과 안전에 대한 우리의 약속은 대사관, 국제 학교, 기업 그룹의 신뢰받는 선택이 되게 했습니다.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Registration Section -->
             <div id="register" class="main-section hidden">
                 <div class="main-content">
                     <div class="content-section">
                         <div class="en">
-                            <h2>Register for Your Adventure</h2>
-                            <p>Ready to join us for an unforgettable Korean adventure? Fill out the registration form below and we'll get back to you within 24 hours with confirmation and payment details.</p>
+                            <h1>Register for Your 2025 Summer Adventure</h1>
+                            <p>Ready to join us for an unforgettable Korean adventure experience? Fill out the registration form below and we'll get back to you within 24 hours with confirmation and secure payment details.</p>
 
                             <div class="highlight-box">
-                                <h4>Trip Information</h4>
-                                <p><strong>Date:</strong> Next available weekend (check calendar below)<br>
-                                <strong>Price:</strong> ₩280,000 per person (all-inclusive)<br>
-                                <strong>Group Size:</strong> Limited to 20 participants</p>
+                                <h4>🎯 2025 Summer Trip Information</h4>
+                                <p><strong>Available Dates:</strong> June, July, August 2025 (Multiple weekend options)<br>
+                                <strong>All-Inclusive Price:</strong> ₩280,000 per person<br>
+                                <strong>Group Size:</strong> Limited to 20 adventurers per trip<br>
+                                <strong>Early Bird Discount:</strong> ₩20,000 off for bookings made 30+ days in advance</p>
                             </div>
                         </div>
 
                         <div class="ko hidden">
-                            <h2>모험을 위한 등록</h2>
-                            <p>잊을 수 없는 한국 모험에 참여할 준비가 되셨나요? 아래 등록 양식을 작성해 주시면 24시간 이내에 확인 및 결제 세부사항과 함께 연락드리겠습니다.</p>
+                            <h1>2025 여름 어드벤처 등록</h1>
+                            <p>잊을 수 없는 한국 어드벤처 경험에 참여할 준비가 되셨나요? 아래 등록 양식을 작성해 주시면 24시간 이내에 확인 및 안전한 결제 세부사항과 함께 연락드리겠습니다.</p>
 
                             <div class="highlight-box">
-                                <h4>여행 정보</h4>
-                                <p><strong>날짜:</strong> 다음 이용 가능한 주말 (아래 달력 확인)<br>
-                                <strong>가격:</strong> 1인당 ₩280,000 (모든 것 포함)<br>
-                                <strong>그룹 크기:</strong> 20명 참가자로 제한</p>
+                                <h4>🎯 2025 여름 여행 정보</h4>
+                                <p><strong>이용 가능한 날짜:</strong> 2025년 6월, 7월, 8월 (다양한 주말 옵션)<br>
+                                <strong>올 인클루시브 가격:</strong> 1인당 ₩280,000<br>
+                                <strong>그룹 크기:</strong> 여행당 20명의 모험가로 제한<br>
+                                <strong>얼리버드 할인:</strong> 30일 이상 사전 예약 시 ₩20,000 할인</p>
                             </div>
                         </div>
 
@@ -639,12 +779,57 @@
                                         <input type="number" id="age" name="age" min="16" max="80" required>
                                     </div>
                                     <div class="form-group">
+                                        <label for="nationality">
+                                            <span class="en">Nationality *</span>
+                                            <span class="ko hidden">국적 *</span>
+                                        </label>
+                                        <input type="text" id="nationality" name="nationality" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
                                         <label for="emergency-contact">
                                             <span class="en">Emergency Contact *</span>
                                             <span class="ko hidden">비상 연락처 *</span>
                                         </label>
                                         <input type="tel" id="emergency-contact" name="emergencyContact" required>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="emergency-relationship">
+                                            <span class="en">Relationship *</span>
+                                            <span class="ko hidden">관계 *</span>
+                                        </label>
+                                        <input type="text" id="emergency-relationship" name="emergencyRelationship" placeholder="Parent, Spouse, Friend, etc." required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="preferred-dates">
+                                        <span class="en">Preferred Trip Dates *</span>
+                                        <span class="ko hidden">선호 여행 날짜 *</span>
+                                    </label>
+                                    <select id="preferred-dates" name="preferredDates" required>
+                                        <option value="">
+                                            <span class="en">Select your preferred dates</span>
+                                        </option>
+                                        <option value="june-1-2">June 7-8, 2025</option>
+                                        <option value="june-2-3">June 14-15, 2025</option>
+                                        <option value="june-3-4">June 21-22, 2025</option>
+                                        <option value="june-4-5">June 28-29, 2025</option>
+                                        <option value="july-1-2">July 5-6, 2025</option>
+                                        <option value="july-2-3">July 12-13, 2025</option>
+                                        <option value="july-3-4">July 19-20, 2025</option>
+                                        <option value="july-4-5">July 26-27, 2025</option>
+                                        <option value="august-1-2">August 2-3, 2025</option>
+                                        <option value="august-2-3">August 9-10, 2025</option>
+                                        <option value="august-3-4">August 16-17, 2025</option>
+                                        <option value="august-4-5">August 23-24, 2025</option>
+                                        <option value="flexible">
+                                            <span class="en">Flexible - Any available weekend</span>
+                                            <span class="ko hidden">유연함 - 이용 가능한 아무 주말</span>
+                                        </option>
+                                    </select>
                                 </div>
 
                                 <div class="form-group">
@@ -652,7 +837,7 @@
                                         <span class="en">Dietary Restrictions / Allergies</span>
                                         <span class="ko hidden">식이 제한 / 알레르기</span>
                                     </label>
-                                    <textarea id="dietary-restrictions" name="dietaryRestrictions" rows="3" placeholder="Please list any food allergies or dietary requirements..."></textarea>
+                                    <textarea id="dietary-restrictions" name="dietaryRestrictions" rows="3" placeholder="Please list any food allergies, dietary requirements, or medical conditions we should know about..."></textarea>
                                 </div>
 
                                 <div class="form-group">
@@ -663,7 +848,6 @@
                                     <select id="experience-level" name="experienceLevel" required>
                                         <option value="">
                                             <span class="en">Select your experience level</span>
-                                            <span class="ko hidden">경험 수준 선택</span>
                                         </option>
                                         <option value="beginner">
                                             <span class="en">Beginner - First time adventure activities</span>
@@ -681,11 +865,46 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="how-heard">
+                                        <span class="en">How did you hear about WinK?</span>
+                                        <span class="ko hidden">WinK를 어떻게 알게 되셨나요?</span>
+                                    </label>
+                                    <select id="how-heard" name="howHeard">
+                                        <option value="">
+                                            <span class="en">Please select</span>
+                                        </option>
+                                        <option value="social-media">Social Media</option>
+                                        <option value="friend-referral">Friend Referral</option>
+                                        <option value="google-search">Google Search</option>
+                                        <option value="travel-blog">Travel Blog/Website</option>
+                                        <option value="embassy">Embassy/Consulate</option>
+                                        <option value="school">International School</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="special-requests">
                                         <span class="en">Special Requests or Comments</span>
                                         <span class="ko hidden">특별 요청 또는 의견</span>
                                     </label>
-                                    <textarea id="special-requests" name="specialRequests" rows="4" placeholder="Any special requests, concerns, or additional information you'd like us to know..."></textarea>
+                                    <textarea id="special-requests" name="specialRequests" rows="4" placeholder="Any special requests, concerns, celebration occasions, or additional information you'd like us to know..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="terms-agreement" name="termsAgreement" required>
+                                        <span class="en">I agree to the terms and conditions, liability waiver, and cancellation policy *</span>
+                                        <span class="ko hidden">이용 약관, 책임 면제, 취소 정책에 동의합니다 *</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="marketing-consent" name="marketingConsent">
+                                        <span class="en">I would like to receive updates about future WinK adventures and special offers</span>
+                                        <span class="ko hidden">향후 WinK 어드벤처 및 특별 제안에 대한 업데이트를 받고 싶습니다</span>
+                                    </label>
                                 </div>
 
                                 <div class="form-group text-center">
@@ -698,16 +917,27 @@
                         </div>
 
                         <div class="en">
-                            <p><strong>What happens next?</strong> After submitting your registration, our team will review your application and send you a confirmation email within 24 hours. This email will include payment instructions and additional trip details.</p>
+                            <h3>📋 What happens next?</h3>
+                            <p><strong>Step 1:</strong> After submitting your registration, our team will review your application and send you a confirmation email within 24 hours.<br>
+                            <strong>Step 2:</strong> This email will include secure payment instructions, detailed packing list, and additional trip information.<br>
+                            <strong>Step 3:</strong> Complete payment within 7 days to secure your spot (payment plans available for groups).<br>
+                            <strong>Step 4:</strong> Receive final trip details, meeting point instructions, and emergency contact information 1 week before departure.</p>
                         </div>
 
                         <div class="ko hidden">
-                            <p><strong>다음에는 무엇이 일어나나요?</strong> 등록을 제출한 후, 우리 팀이 신청서를 검토하고 24시간 이내에 확인 이메일을 보내드립니다. 이 이메일에는 결제 안내와 추가 여행 세부사항이 포함됩니다.</p>
+                            <h3>📋 다음에는 무엇이 일어나나요?</h3>
+                            <p><strong>1단계:</strong> 등록을 제출한 후, 우리 팀이 신청서를 검토하고 24시간 이내에 확인 이메일을 보내드립니다.<br>
+                            <strong>2단계:</strong> 이 이메일에는 안전한 결제 안내, 자세한 준비물 목록, 추가 여행 정보가 포함됩니다.<br>
+                            <strong>3단계:</strong> 자리를 확보하기 위해 7일 이내에 결제를 완료하세요 (그룹을 위한 분할 결제 가능).<br>
+                            <strong>4단계:</strong> 출발 1주일 전에 최종 여행 세부사항, 만남 장소 안내, 비상 연락처 정보를 받으세요.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Mobile Menu Toggle (Hidden by default, shown on mobile) -->
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
     </div>
 
     <script src="assets/js/scripts.js"></script>
