@@ -144,7 +144,7 @@ function setupTabs() {
   }
 }
 
-// Show specific tab
+// Show specific tab with smooth transition
 function showTab(tabId) {
   // Update active tab button
   document.querySelectorAll('.tab-button').forEach(button => {
@@ -154,28 +154,39 @@ function showTab(tabId) {
     }
   });
   
-  // Update content
+  // Update content with fade effect
   const contentArea = document.getElementById('content-area');
   const content = translations[currentLang].content[tabId];
   
   if (content && contentArea) {
-    let imageHtml = '';
-    const imageMap = {
-      introduction: 'intro.png',
-      rafting: 'rafting.png',
-      paintball: 'paintball.png',
-      atv: 'atv.png'
-    };
+    // Fade out
+    contentArea.style.opacity = '0';
+    contentArea.style.transform = 'translateY(20px)';
     
-    if (imageMap[tabId]) {
-      imageHtml = `<img src="/assets/images/${imageMap[tabId]}" alt="${content.title}" class="content-image">`;
-    }
-    
-    contentArea.innerHTML = `
-      <h2>${content.title}</h2>
-      ${imageHtml}
-      <p>${content.description}</p>
-    `;
+    setTimeout(() => {
+      let imageHtml = '';
+      const imageMap = {
+        introduction: 'intro.png',
+        rafting: 'rafting.png',
+        paintball: 'paintball.png',
+        atv: 'atv.png'
+      };
+      
+      if (imageMap[tabId]) {
+        imageHtml = `<img src="/assets/images/${imageMap[tabId]}" alt="${content.title}" class="content-image">`;
+      }
+      
+      contentArea.innerHTML = `
+        <h2>${content.title}</h2>
+        ${imageHtml}
+        <p>${content.description}</p>
+      `;
+      
+      // Fade in
+      contentArea.style.transition = 'all 0.5s ease';
+      contentArea.style.opacity = '1';
+      contentArea.style.transform = 'translateY(0)';
+    }, 300);
   }
 }
 
@@ -213,12 +224,84 @@ function updateLanguage() {
   }
 }
 
-// Handle registration form (placeholder for now)
+// Handle registration form with modern modal
 function openRegistrationForm() {
-  alert(currentLang === 'en' ? 'Registration form coming soon!' : '등록 양식이 곧 제공됩니다!');
+  const message = currentLang === 'en' 
+    ? 'Registration will open soon! Get ready for an amazing adventure.' 
+    : '등록이 곧 시작됩니다! 놀라운 모험을 준비하세요.';
+  
+  // Create modern notification
+  const notification = document.createElement('div');
+  notification.style.cssText = `
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 50px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    z-index: 2000;
+    animation: notificationPop 0.5s ease;
+  `;
+  notification.textContent = message;
+  document.body.appendChild(notification);
+  
+  setTimeout(() => {
+    notification.style.opacity = '0';
+    notification.style.transform = 'translate(-50%, -50%) scale(0.9)';
+    setTimeout(() => notification.remove(), 300);
+  }, 3000);
 }
 
-// Handle About WinK (placeholder for now)
+// Handle About WinK with modern modal
 function showAboutWink() {
-  alert(currentLang === 'en' ? 'About WinK section coming soon!' : 'WinK 소개 섹션이 곧 제공됩니다!');
+  const message = currentLang === 'en' 
+    ? 'When in Korea (WinK) - Your gateway to Korean adventures!' 
+    : 'When in Korea (WinK) - 한국 모험의 관문!';
+  
+  // Create modern notification
+  const notification = document.createElement('div');
+  notification.style.cssText = `
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 30px 50px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    z-index: 2000;
+    animation: notificationPop 0.5s ease;
+  `;
+  notification.textContent = message;
+  document.body.appendChild(notification);
+  
+  setTimeout(() => {
+    notification.style.opacity = '0';
+    notification.style.transform = 'translate(-50%, -50%) scale(0.9)';
+    setTimeout(() => notification.remove(), 300);
+  }, 3000);
 }
+
+// Add CSS for notification animation
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes notificationPop {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+`;
+document.head.appendChild(style);
