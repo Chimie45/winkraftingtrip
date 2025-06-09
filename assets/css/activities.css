@@ -1,0 +1,385 @@
+/* Activities Section Styles (activities.css) */
+
+/* Activities Showcase Container */
+.activities-showcase {
+    padding: 8rem 0;
+    background: var(--white);
+    position: relative;
+}
+
+/* Activity Filter */
+.activity-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: var(--white);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: var(--font-size-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.filter-btn:hover::before,
+.filter-btn.active::before {
+    left: 0;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Activities Grid */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Activity Card */
+.activity-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+}
+
+.activity-card.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.activity-card.premium {
+    border: 2px solid var(--highlight-color);
+}
+
+.activity-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-extreme);
+    z-index: 10;
+}
+
+/* Activity Image */
+.activity-image {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.activity-card:hover .activity-image img {
+    transform: scale(1.15);
+}
+
+/* Activity Overlay */
+.activity-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.9) 100%);
+    color: var(--white);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.activity-card:hover .activity-overlay {
+    opacity: 1;
+}
+
+/* Activity Level Badge */
+.activity-level {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.activity-level.easy { 
+    background: rgba(40, 167, 69, 0.9);
+    color: var(--white);
+}
+
+.activity-level.moderate { 
+    background: rgba(255, 193, 7, 0.9);
+    color: var(--dark-color);
+}
+
+.activity-level.extreme { 
+    background: rgba(207, 53, 64, 0.9);
+    color: var(--white);
+}
+
+/* Activity Info */
+.activity-info h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.activity-info p {
+    font-size: var(--font-size-base);
+    opacity: 0.9;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* Activity Details */
+.activity-details {
+    display: flex;
+    gap: 1rem;
+    font-size: var(--font-size-sm);
+    opacity: 0.8;
+    flex-wrap: wrap;
+}
+
+.activity-details span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+/* Premium Badge */
+.premium-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--gradient-highlight);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: premiumGlow 2s ease-in-out infinite alternate;
+    backdrop-filter: blur(10px);
+}
+
+/* Activity Card Hover Effects */
+.activity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(46, 82, 143, 0.1), transparent);
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.activity-card:hover::before {
+    opacity: 1;
+}
+
+/* Activity Card Loading Animation */
+.activity-card.loading {
+    animation: cardPulse 1.5s ease-in-out infinite;
+}
+
+/* Keyframe Animations */
+@keyframes premiumGlow {
+    0% { 
+        box-shadow: 0 0 10px rgba(207, 53, 64, 0.5);
+        transform: scale(1);
+    }
+    100% { 
+        box-shadow: 0 0 20px rgba(207, 53, 64, 0.8), 0 0 30px rgba(207, 53, 64, 0.4);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes cardPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes cardSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Activity Card Categories */
+.activity-card[data-category*="water"] .activity-level {
+    border-left: 4px solid #17a2b8;
+}
+
+.activity-card[data-category*="extreme"] .activity-level {
+    border-left: 4px solid #dc3545;
+}
+
+.activity-card[data-category*="cultural"] .activity-level {
+    border-left: 4px solid #6f42c1;
+}
+
+.activity-card[data-category*="adventure"] .activity-level {
+    border-left: 4px solid #28a745;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .activities-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .activities-showcase {
+        padding: 6rem 0;
+    }
+    
+    .activity-filter {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+    
+    .activities-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .activity-image {
+        height: 240px;
+    }
+    
+    .activity-overlay {
+        padding: 1.5rem;
+    }
+    
+    .activity-info h3 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .activity-details {
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .activities-showcase {
+        padding: 4rem 0;
+    }
+    
+    .activity-image {
+        height: 200px;
+    }
+    
+    .activity-overlay {
+        padding: 1rem;
+    }
+    
+    .activity-info h3 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .activity-info p {
+        font-size: var(--font-size-sm);
+    }
+    
+    .activity-details {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .activity-details span {
+        text-align: center;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .activity-card,
+    .activity-image img,
+    .premium-badge {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .activity-card:hover {
+        transform: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .activity-card {
+        border: 2px solid var(--dark-color);
+    }
+    
+    .activity-overlay {
+        background: rgba(0, 0, 0, 0.9);
+    }
+    
+    .filter-btn {
+        border-width: 3px;
+    }
+}
